@@ -1,0 +1,1654 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wave Agency — Apps para clínicas de estética</title>
+<meta name="description" content="Todas as clínicas de estética têm um site. Nenhuma tem uma app. A Wave cria apps premium com a identidade da sua clínica: marcações, fidelização, planos de tratamento e comunicação direta.">
+<meta name="theme-color" content="#0b1f19">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Wave Agency — A app da sua clínica de estética">
+<meta property="og:description" content="Todas as clínicas de estética têm um site. Nenhuma tem uma app. Black Friday: -20% na criação da app da sua clínica.">
+<meta property="og:image" content="https://waveagency.pt/og-image.png">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:url" content="https://waveagency.pt/">
+<link rel="canonical" href="https://waveagency.pt/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --green-950:#071712;
+  --green-900:#0b1f19;
+  --green-800:#0f2a22;
+  --green-700:#163a2f;
+  --green-600:#1f4a3c;
+  --gold:#c9a46a;
+  --gold-l:#e8cc97;
+  --gold-d:#9c7a45;
+  --cream:#f6f0e7;
+  --cream-2:#efe6d8;
+  --ink:#1c1915;
+  --muted:#6f675c;
+  --wine:#6e2f22;
+  --black:#0a0907;
+  --serif:'Cormorant Garamond', Georgia, serif;
+  --sans:'Manrope', system-ui, -apple-system, sans-serif;
+  --radius:22px;
+  --ease:cubic-bezier(.2,.7,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:var(--sans);background:var(--green-900);color:var(--cream);-webkit-font-smoothing:antialiased;overflow-x:hidden;line-height:1.55}
+a{color:inherit;text-decoration:none}
+img,svg{display:block}
+button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
+.wrap{width:min(1240px,100% - 32px);margin-inline:auto}
+.serif{font-family:var(--serif)}
+em.gold,.gold-text{font-style:italic;background:linear-gradient(100deg,var(--gold-d),var(--gold-l) 45%,var(--gold) 70%,var(--gold-l));-webkit-background-clip:text;background-clip:text;color:transparent;background-size:200% 100%;animation:shine 6s linear infinite}
+@keyframes shine{to{background-position:-200% 0}}
+.eyebrow{display:inline-flex;align-items:center;gap:14px;font-size:12px;letter-spacing:.24em;text-transform:uppercase;font-weight:700;color:var(--gold-l)}
+.eyebrow::after{content:"";width:46px;height:1px;background:var(--gold)}
+.eyebrow.dark{color:var(--green-800)}
+
+/* ---------- Buttons ---------- */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:12px;padding:17px 28px;border-radius:12px;font-weight:700;font-size:16px;transition:transform .35s var(--ease),box-shadow .35s var(--ease),background .35s;white-space:nowrap}
+.btn svg{width:18px;height:18px;transition:transform .35s var(--ease)}
+.btn:hover svg{transform:translateX(4px)}
+.btn-gold{background:linear-gradient(135deg,var(--gold-l),var(--gold) 55%,var(--gold-d));color:#1a140a;box-shadow:0 10px 30px -10px rgba(201,164,106,.6),inset 0 1px 0 rgba(255,255,255,.5);position:relative;overflow:hidden}
+.btn-gold::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);animation:sweep 3.6s var(--ease) infinite}
+@keyframes sweep{0%,55%{transform:translateX(-120%)}100%{transform:translateX(120%)}}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(201,164,106,.75)}
+.btn-ghost{border:1px solid rgba(232,204,151,.45);color:var(--cream)}
+.btn-ghost:hover{background:rgba(232,204,151,.08);transform:translateY(-2px)}
+.btn-lg{padding:21px 34px;font-size:17px}
+
+/* ---------- Black Friday bar ---------- */
+.bf-bar{position:relative;z-index:60;background:#050505;border-bottom:1px solid rgba(201,164,106,.35);font-size:13.5px}
+.bf-bar .wrap{display:flex;align-items:center;justify-content:center;gap:18px;padding:10px 0;flex-wrap:wrap;text-align:center}
+.bf-pill{font-weight:800;letter-spacing:.18em;font-size:11px;padding:5px 10px;border-radius:6px;background:linear-gradient(135deg,var(--gold-l),var(--gold-d));color:#120d05}
+.bf-bar strong{color:var(--gold-l)}
+.bf-timer{font-variant-numeric:tabular-nums;font-weight:700;color:var(--cream)}
+.bf-bar a{text-decoration:underline;text-underline-offset:3px;color:var(--gold-l);font-weight:700}
+
+/* ---------- Nav ---------- */
+.nav{position:sticky;top:0;z-index:50;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
+.nav.scrolled{background:rgba(7,23,18,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:rgba(201,164,106,.15)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:78px}
+.logo{display:flex;align-items:center;gap:16px}
+.logo b{font-family:var(--sans);font-weight:800;font-size:30px;letter-spacing:-.04em;color:#fff}
+.logo b i{font-style:normal;color:var(--gold)}
+.logo span{font-size:12px;letter-spacing:.42em;color:var(--cream);opacity:.85}
+.nav-links{display:flex;gap:36px;font-weight:600;font-size:15px}
+.nav-links a{opacity:.85;transition:opacity .3s,color .3s}
+.nav-links a:hover{opacity:1;color:var(--gold-l)}
+.nav .btn{padding:12px 20px;font-size:14.5px;border-radius:10px}
+.menu-btn{display:none;width:44px;height:44px;border-radius:10px;border:1px solid rgba(232,204,151,.35)}
+.menu-btn span{display:block;width:18px;height:1.5px;background:var(--cream);margin:4px auto;transition:.3s}
+
+/* ---------- Hero ---------- */
+.hero{position:relative;min-height:calc(100vh - 120px);display:flex;align-items:center;overflow:hidden;padding:30px 0 70px;isolation:isolate}
+.hero-bg{position:absolute;inset:0;z-index:-2;background:
+  radial-gradient(1000px 600px at 78% 30%,rgba(201,164,106,.16),transparent 60%),
+  radial-gradient(800px 500px at 10% 90%,rgba(31,74,60,.9),transparent 70%),
+  linear-gradient(160deg,var(--green-800),var(--green-950) 75%)}
+#particles{position:absolute;inset:0;z-index:-1;pointer-events:none}
+.silk{position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.55}
+.silk path{fill:none;stroke-linecap:round}
+.silk .s1{animation:drift 14s ease-in-out infinite alternate}
+.silk .s2{animation:drift 18s ease-in-out infinite alternate-reverse}
+.silk .s3{animation:drift 22s ease-in-out infinite alternate}
+@keyframes drift{from{transform:translate(0,0)}to{transform:translate(-40px,26px)}}
+.hero-grid{display:grid;grid-template-columns:1.02fr 1fr;gap:40px;align-items:center}
+.hero h1{font-family:var(--serif);font-weight:600;font-size:clamp(42px,4.9vw,74px);line-height:1;letter-spacing:-.01em;margin:22px 0 24px}
+.hero h1 .line{display:block;overflow:hidden;padding-bottom:.08em}
+.hero h1 .line>span{display:block;transform:translateY(110%);animation:rise 1.1s var(--ease) forwards}
+.hero h1 .line:nth-child(2)>span{animation-delay:.12s}
+.hero h1 .line:nth-child(3)>span{animation-delay:.24s}
+.hero h1 .line:nth-child(4)>span{animation-delay:.36s}
+@keyframes rise{to{transform:none}}
+.hero h1 .muted-strike{position:relative;color:rgba(246,240,231,.72)}
+.hero p.lead{font-size:clamp(17px,1.4vw,19.5px);color:rgba(246,240,231,.82);max-width:540px}
+.hero-ctas{display:flex;gap:14px;flex-wrap:wrap;margin-top:34px}
+.hero-note{display:flex;align-items:center;gap:10px;margin-top:22px;font-size:14px;color:rgba(246,240,231,.7)}
+.hero-note .dot{width:8px;height:8px;border-radius:50%;background:#7fd1a5;box-shadow:0 0 0 0 rgba(127,209,165,.7);animation:ping 2s infinite}
+@keyframes ping{70%{box-shadow:0 0 0 10px rgba(127,209,165,0)}100%{box-shadow:0 0 0 0 rgba(127,209,165,0)}}
+.fade-up{opacity:0;transform:translateY(24px);animation:fu 1s var(--ease) forwards}
+@keyframes fu{to{opacity:1;transform:none}}
+
+/* 3D scene */
+.scene{position:relative;height:640px;perspective:1600px}
+.stage{position:absolute;inset:0;transform-style:preserve-3d;transform:rotateX(var(--rx,6deg)) rotateY(var(--ry,-10deg));transition:transform .9s var(--ease)}
+.browser{position:absolute;left:-2%;top:120px;width:470px;height:320px;border-radius:14px;background:#f2eee8;box-shadow:0 40px 80px -20px rgba(0,0,0,.6);transform:translateZ(-160px) rotateY(16deg);overflow:hidden;filter:saturate(.25) brightness(.62);transition:filter .8s}
+.browser .bar{height:30px;background:#ddd6cb;display:flex;align-items:center;gap:6px;padding:0 12px}
+.browser .bar i{width:9px;height:9px;border-radius:50%;background:#b9b0a3}
+.browser .bar u{flex:1;margin-left:12px;height:14px;border-radius:7px;background:#ece6dc}
+.browser .page{padding:22px 26px;color:#38332c}
+.browser .page .bl{height:10px;border-radius:5px;background:#cfc7ba;margin-bottom:10px}
+.browser .page h4{font-family:var(--serif);font-size:30px;line-height:1;margin:18px 0 14px;font-weight:600}
+.browser .page .row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:20px}
+.browser .page .row div{height:70px;border-radius:8px;background:#ddd5c8}
+.tag{position:absolute;padding:10px 16px;border-radius:999px;font-size:13px;font-weight:700;white-space:nowrap;backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px)}
+.tag-site{left:4%;top:76px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:rgba(246,240,231,.7);transform:translateZ(-100px)}
+.tag-site s{opacity:.7}
+.tag-app{right:-2%;bottom:70px;background:linear-gradient(135deg,rgba(232,204,151,.95),rgba(201,164,106,.95));color:#1a140a;transform:translateZ(160px);box-shadow:0 14px 30px -10px rgba(201,164,106,.7)}
+.hero-phone-pos{position:absolute;right:8%;top:10px;transform-style:preserve-3d;transform:translateZ(90px) rotateY(-12deg)}
+.float{animation:float 6s ease-in-out infinite;transform-style:preserve-3d}
+@keyframes float{50%{transform:translateY(-16px) rotateZ(-1deg)}}
+.glow{position:absolute;inset:auto -30% -12% -30%;height:160px;background:radial-gradient(closest-side,rgba(201,164,106,.45),transparent);filter:blur(20px);transform:translateZ(-60px) rotateX(80deg)}
+
+/* ---------- Phone + App UI ---------- */
+.phone{--w:290px;width:var(--w);height:calc(var(--w)*2.07);border-radius:calc(var(--w)*.16);padding:10px;position:relative;
+  background:linear-gradient(145deg,#4a4640,#141210 30%,#2a2723 60%,#0c0b0a);
+  box-shadow:0 0 0 1.5px #5c564d inset,0 50px 90px -25px rgba(0,0,0,.8),0 0 60px -10px rgba(201,164,106,.25)}
+.phone::before{content:"";position:absolute;top:20px;left:50%;transform:translateX(-50%);width:32%;height:26px;border-radius:20px;background:#000;z-index:5}
+.screen{position:relative;width:100%;height:100%;border-radius:calc(var(--w)*.13);overflow:hidden;background:radial-gradient(120% 60% at 70% 0%,#3a2c1a,transparent 60%),linear-gradient(180deg,#17130e,#0b0a08);color:#f4ead9}
+.screen::after{content:"";position:absolute;inset:0;background:linear-gradient(115deg,rgba(255,255,255,.09),transparent 35%);pointer-events:none;z-index:9}
+.status{display:flex;justify-content:space-between;padding:14px 24px 0;font-size:11px;font-weight:700;opacity:.9}
+.app-screen{position:absolute;inset:44px 0 64px;padding:10px 18px;opacity:0;transform:translateY(16px) scale(.98);transition:opacity .6s var(--ease),transform .6s var(--ease);overflow:hidden}
+.app-screen.active{opacity:1;transform:none}
+.brand{text-align:center;margin-top:4px}
+.brand svg{width:26px;height:26px;margin:0 auto 4px;color:var(--gold)}
+.brand div{font-family:var(--serif);font-style:italic;font-size:17px;color:var(--gold-l)}
+.a-h{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.05;margin:14px 0 2px}
+.a-sub{font-size:11px;opacity:.7}
+.a-card{border-radius:16px;padding:12px 14px;margin-top:12px;display:flex;align-items:center;gap:12px}
+.a-card.gold{background:linear-gradient(135deg,#ecd3a3,#c9a46a);color:#2a1e0c}
+.a-card.dark{background:rgba(255,255,255,.06);border:1px solid rgba(232,204,151,.2)}
+.a-card small{display:block;font-size:9.5px;opacity:.75}
+.a-card b{font-size:12.5px;display:block}
+.a-card .ico{width:30px;height:30px;flex:none}
+.a-card .chev{margin-left:auto;width:14px;height:14px;opacity:.7}
+.a-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.a-grid div{aspect-ratio:1;border-radius:14px;border:1px solid rgba(232,204,151,.2);background:rgba(255,255,255,.04);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;font-size:9.5px}
+.a-grid svg{width:20px;height:20px;color:var(--gold-l)}
+.tabbar{position:absolute;left:0;right:0;bottom:0;height:64px;display:flex;justify-content:space-around;align-items:center;border-top:1px solid rgba(232,204,151,.15);background:rgba(10,9,7,.85);font-size:9px;z-index:3}
+.tabbar span{display:flex;flex-direction:column;align-items:center;gap:3px;opacity:.6}
+.tabbar span.on{opacity:1;color:var(--gold-l)}
+.tabbar svg{width:17px;height:17px}
+.days{display:flex;gap:6px;margin-top:12px}
+.days div{flex:1;border-radius:12px;padding:8px 0;text-align:center;font-size:9px;background:rgba(255,255,255,.05);border:1px solid rgba(232,204,151,.15)}
+.days div b{display:block;font-size:15px;font-family:var(--serif)}
+.days .on{background:linear-gradient(135deg,#ecd3a3,#c9a46a);color:#2a1e0c;border:0}
+.slots{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-top:12px}
+.slots div{text-align:center;padding:8px 0;border-radius:10px;font-size:11px;background:rgba(255,255,255,.05);border:1px solid rgba(232,204,151,.15)}
+.slots .on{border-color:var(--gold);color:var(--gold-l);background:rgba(201,164,106,.15)}
+.slots .off{opacity:.3;text-decoration:line-through}
+.a-btn{margin-top:14px;border-radius:12px;padding:11px;text-align:center;font-weight:800;font-size:12px;background:linear-gradient(135deg,#ecd3a3,#c9a46a);color:#2a1e0c}
+.lbl{font-size:10px;letter-spacing:.16em;text-transform:uppercase;opacity:.6;margin-top:14px}
+.ring{width:150px;height:150px;margin:14px auto 4px;position:relative}
+.ring svg{width:100%;height:100%;transform:rotate(-90deg)}
+.ring .v{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.ring .v b{font-family:var(--serif);font-size:34px;line-height:1}
+.ring .v small{font-size:10px;opacity:.7}
+.reward{display:flex;justify-content:space-between;align-items:center;padding:10px 12px;border-radius:12px;background:rgba(255,255,255,.05);border:1px solid rgba(232,204,151,.15);margin-top:8px;font-size:11px}
+.reward em{font-style:normal;color:var(--gold-l);font-weight:700}
+.progress{height:8px;border-radius:5px;background:rgba(255,255,255,.08);margin-top:10px;overflow:hidden}
+.progress i{display:block;height:100%;width:66%;border-radius:5px;background:linear-gradient(90deg,var(--gold-d),var(--gold-l))}
+.tl{margin-top:12px;position:relative;padding-left:18px}
+.tl::before{content:"";position:absolute;left:5px;top:6px;bottom:6px;width:1px;background:rgba(232,204,151,.3)}
+.tl div{position:relative;font-size:11px;padding:6px 0}
+.tl div::before{content:"";position:absolute;left:-17px;top:10px;width:9px;height:9px;border-radius:50%;border:1px solid var(--gold);background:#0b0a08}
+.tl div.done::before{background:var(--gold)}
+.tl small{display:block;opacity:.55;font-size:9.5px}
+.notif{border-radius:16px;padding:11px 12px;background:rgba(255,255,255,.08);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.08);margin-top:10px;font-size:11px;display:flex;gap:10px}
+.notif .ap{width:30px;height:30px;border-radius:9px;flex:none;background:linear-gradient(135deg,#ecd3a3,#9c7a45);display:flex;align-items:center;justify-content:center}
+.notif .ap svg{width:16px;height:16px;color:#2a1e0c}
+.notif b{display:block;font-size:11.5px}
+.notif small{opacity:.55;font-size:9px;float:right}
+.notif.hl{background:linear-gradient(135deg,rgba(236,211,163,.22),rgba(201,164,106,.08));border-color:rgba(232,204,151,.45)}
+.lock-time{text-align:center;font-family:var(--serif);font-size:56px;line-height:1;margin-top:8px}
+.lock-date{text-align:center;font-size:11px;opacity:.7}
+.treat{display:flex;gap:10px;align-items:center;padding:9px 0;border-bottom:1px solid rgba(232,204,151,.12)}
+.treat .th{width:42px;height:42px;border-radius:12px;flex:none;background:radial-gradient(circle at 30% 30%,#f1dcb3,#8b6a3a)}
+.treat:nth-child(3) .th{background:radial-gradient(circle at 30% 30%,#e7c7b8,#7a4a3a)}
+.treat:nth-child(4) .th{background:radial-gradient(circle at 30% 30%,#d6dccd,#4f5e4a)}
+.treat:nth-child(5) .th{background:radial-gradient(circle at 30% 30%,#efd9c4,#8a6249)}
+.treat b{font-size:12px;display:block}
+.treat small{font-size:9.5px;opacity:.6}
+.treat em{margin-left:auto;font-style:normal;font-weight:800;color:var(--gold-l);font-size:12px}
+.chips{display:flex;gap:6px;margin-top:10px}
+.chips span{font-size:9.5px;padding:5px 10px;border-radius:999px;border:1px solid rgba(232,204,151,.25)}
+.chips span.on{background:var(--gold);color:#2a1e0c;border-color:var(--gold)}
+
+/* ---------- Trust strip ---------- */
+.strip{border-top:1px solid rgba(201,164,106,.18);border-bottom:1px solid rgba(201,164,106,.18);background:rgba(0,0,0,.18);overflow:hidden}
+.marquee{display:flex;width:max-content;animation:mq 38s linear infinite}
+.marquee span{display:flex;align-items:center;gap:16px;padding:22px 34px;font-family:var(--serif);font-size:24px;font-style:italic;color:rgba(246,240,231,.85);white-space:nowrap}
+.marquee span::after{content:"✦";font-style:normal;color:var(--gold);font-size:14px;margin-left:34px}
+@keyframes mq{to{transform:translateX(-50%)}}
+
+/* ---------- Sections ---------- */
+section{position:relative}
+.sec{padding:clamp(80px,11vw,150px) 0}
+.sec-head{max-width:820px;margin-bottom:60px}
+.sec h2{font-family:var(--serif);font-weight:600;font-size:clamp(38px,5vw,68px);line-height:1.02;letter-spacing:-.01em;margin-top:18px}
+.sec .intro{font-size:18px;margin-top:20px;max-width:640px}
+.light{background:var(--cream);color:var(--ink)}
+.light .intro{color:var(--muted)}
+.light em.gold{background:none;color:var(--green-700);-webkit-text-fill-color:var(--green-700);animation:none}
+.reveal{opacity:0;transform:translateY(40px);transition:opacity 1s var(--ease),transform 1s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.1s}.reveal.d2{transition-delay:.2s}.reveal.d3{transition-delay:.3s}
+
+/* Problem: site vs app */
+.vs{display:grid;grid-template-columns:1fr auto 1fr;gap:28px;align-items:stretch}
+.vs-card{border-radius:28px;padding:44px 40px;position:relative;overflow:hidden}
+.vs-card h3{font-family:var(--serif);font-size:38px;font-weight:600;line-height:1.05;margin:14px 0 22px}
+.vs-card ul{list-style:none;display:grid;gap:16px}
+.vs-card li{display:flex;gap:14px;align-items:flex-start;font-size:16.5px}
+.vs-card li svg{width:22px;height:22px;flex:none;margin-top:1px}
+.vs-site{background:var(--cream-2);color:#5b544a;border:1px solid #e1d6c4}
+.vs-site .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:#8d8576}
+.vs-site li svg{color:#a89f90}
+.vs-app{background:linear-gradient(150deg,var(--green-700),var(--green-900));color:var(--cream);box-shadow:0 40px 80px -30px rgba(11,31,25,.6)}
+.vs-app::before{content:"";position:absolute;right:-80px;top:-80px;width:280px;height:280px;border-radius:50%;background:radial-gradient(closest-side,rgba(201,164,106,.35),transparent)}
+.vs-app .k{font-size:12px;letter-spacing:.2em;text-transform:uppercase;font-weight:700;color:var(--gold-l)}
+.vs-app li svg{color:var(--gold)}
+.vs-mid{display:flex;align-items:center;justify-content:center}
+.vs-mid span{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:26px;background:var(--ink);color:var(--gold-l)}
+
+/* Showcase */
+.show{background:linear-gradient(180deg,var(--green-900),var(--green-950));overflow:clip}
+.show-grid{display:grid;grid-template-columns:1fr 1fr;gap:60px}
+.steps .step{min-height:78vh;display:flex;flex-direction:column;justify-content:center;opacity:.28;transition:opacity .6s var(--ease)}
+.steps .step.active{opacity:1}
+.step .num{font-family:var(--serif);font-size:20px;color:var(--gold);font-style:italic}
+.step h3{font-family:var(--serif);font-weight:600;font-size:clamp(34px,3.6vw,52px);line-height:1.04;margin:10px 0 18px}
+.step p{font-size:18px;color:rgba(246,240,231,.78);max-width:470px}
+.step .pill{display:inline-flex;align-items:center;gap:8px;margin-top:24px;font-size:13.5px;font-weight:700;color:var(--gold-l);padding:9px 16px;border:1px solid rgba(232,204,151,.3);border-radius:999px;align-self:flex-start}
+.sticky-phone{position:sticky;top:0;height:100vh;display:flex;align-items:center;justify-content:center;perspective:1400px}
+.sp-inner{transform:rotateY(var(--sry,-10deg)) rotateX(4deg);transition:transform .9s var(--ease);transform-style:preserve-3d;position:relative}
+.sp-inner::after{content:"";position:absolute;left:10%;right:10%;bottom:-50px;height:60px;border-radius:50%;background:rgba(0,0,0,.55);filter:blur(24px);z-index:-1}
+.sp-halo{position:absolute;width:520px;height:520px;border-radius:50%;background:radial-gradient(closest-side,rgba(201,164,106,.22),transparent);animation:pulse 6s ease-in-out infinite}
+@keyframes pulse{50%{transform:scale(1.12);opacity:.7}}
+.sp-orbit{position:absolute;width:460px;height:460px;border-radius:50%;border:1px dashed rgba(232,204,151,.2);animation:spin 50s linear infinite}
+.sp-orbit::before{content:"";position:absolute;top:-5px;left:50%;width:10px;height:10px;border-radius:50%;background:var(--gold);box-shadow:0 0 18px var(--gold)}
+@keyframes spin{to{transform:rotate(360deg)}}
+.dots{position:absolute;right:-40px;top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:10px}
+.dots i{width:6px;height:6px;border-radius:50%;background:rgba(232,204,151,.3);transition:.4s}
+.dots i.on{background:var(--gold);height:22px;border-radius:4px}
+
+/* ===== Demo app (showcase) ===== */
+#showScreen .app-screen{pointer-events:none}
+#showScreen .app-screen.active{pointer-events:auto}
+#showScreen{background:radial-gradient(120% 50% at 80% 0%,#2e2414,transparent 60%),linear-gradient(180deg,#14110d,#0a0907)}
+.x-top{display:flex;justify-content:space-between;align-items:center}
+.x-top .lg{display:flex;align-items:center;gap:6px;font-family:var(--serif);font-style:italic;font-size:15px;color:var(--gold-l)}
+.x-top .lg svg{width:18px;height:18px;color:var(--gold)}
+.x-av{width:30px;height:30px;border-radius:50%;background:linear-gradient(135deg,#ecd3a3,#9c7a45);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-weight:700;color:#1a140a;font-size:14px;box-shadow:0 0 0 2px #0b0a08,0 0 0 3px rgba(232,204,151,.5)}
+.x-ey{font-size:8.5px;letter-spacing:.28em;font-weight:800;color:var(--gold-l);opacity:.85}
+.x-h{font-family:var(--serif);font-weight:600;font-size:27px;line-height:1.02;margin:6px 0 0}
+.x-h em{color:var(--gold-l)}
+.x-hero{position:relative;height:142px;border-radius:20px;overflow:hidden;margin-top:12px;padding:14px;display:flex;flex-direction:column;justify-content:flex-end;box-shadow:0 16px 30px -14px rgba(0,0,0,.8),inset 0 0 0 1px rgba(232,204,151,.25)}
+.x-hero .art{z-index:0}
+.x-hero>*:not(.art){position:relative;z-index:1}
+.x-hero::after{content:"";position:absolute;inset:0;z-index:0;background:linear-gradient(180deg,transparent 30%,rgba(8,6,4,.85))}
+.x-hero b{font-family:var(--serif);font-size:22px;font-weight:600;line-height:1}
+.x-hero small{font-size:9.5px;opacity:.8}
+.x-hero .progress{margin-top:8px;height:5px}
+.x-hero .tagg{position:absolute;top:12px;left:12px;font-size:8px;letter-spacing:.2em;font-weight:800;padding:4px 7px;border-radius:6px;background:rgba(0,0,0,.45);backdrop-filter:blur(6px);color:var(--gold-l)}
+.x-quick{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-top:14px;text-align:center}
+.x-quick button{display:flex;flex-direction:column;align-items:center;gap:6px;font-size:8.5px;color:#f4ead9;line-height:1.15}
+.x-quick i{width:44px;height:44px;border-radius:15px;display:flex;align-items:center;justify-content:center;background:linear-gradient(160deg,rgba(255,255,255,.09),rgba(255,255,255,.02));border:1px solid rgba(232,204,151,.22);transition:transform .3s,background .3s}
+.x-quick button:hover i{transform:translateY(-2px);background:rgba(201,164,106,.2)}
+.x-quick svg{width:19px;height:19px;color:var(--gold-l)}
+.x-for{cursor:pointer;display:flex;gap:10px;align-items:center;margin-top:14px;padding:9px;border-radius:16px;background:rgba(255,255,255,.04);border:1px solid rgba(232,204,151,.15)}
+.x-for .th{width:50px;height:50px;border-radius:12px;position:relative;overflow:hidden;flex:none}
+.x-for b{display:block;font-size:11.5px}
+.x-for small{font-size:9.5px;color:var(--gold-l)}
+.x-for .chev{margin-left:auto;width:14px;height:14px;opacity:.6}
+/* problem grid */
+.x-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:12px}
+.x-tile{position:relative;height:104px;border-radius:16px;overflow:hidden;text-align:left;padding:9px 11px;display:flex;flex-direction:column;justify-content:flex-end;color:#2a1d10;transition:transform .35s var(--ease),box-shadow .35s;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}
+.x-tile:hover{transform:scale(1.03)}
+.x-tile:active{transform:scale(.97)}
+.x-tile svg.fa{position:absolute;right:-6px;top:4px;width:66px;height:80px;color:#8a6234}
+.x-tile b{position:relative;font-family:var(--serif);font-size:16px;font-weight:600;line-height:1}
+.x-tile small{position:relative;font-size:8px;letter-spacing:.14em;font-weight:800;opacity:.6;margin-top:3px}
+.t1{background:linear-gradient(150deg,#f6e6d4,#e2c3a2)}
+.t2{background:linear-gradient(150deg,#f3e0cf,#d8b08c)}
+.t3{background:linear-gradient(150deg,#f5e9de,#dfc0a8)}
+.t4{background:linear-gradient(150deg,#efdcc2,#cfa877)}
+.t5{background:linear-gradient(150deg,#f7ebe1,#e6c9b4)}
+.t6{background:linear-gradient(150deg,#ecdccd,#c9a68a)}
+.x-tap{position:absolute;width:34px;height:34px;border-radius:50%;border:2px solid #fff;left:50%;top:44%;margin:-17px 0 0 -17px;opacity:0;pointer-events:none}
+.app-screen.active .x-tap{animation:tap 2.6s 1s ease-out infinite}
+@keyframes tap{0%{opacity:0;transform:scale(.4)}20%{opacity:.9;transform:scale(.8)}60%{opacity:0;transform:scale(1.6)}100%{opacity:0}}
+.x-note{font-size:8.5px;opacity:.5;margin-top:10px;text-align:center}
+/* detail */
+.x-dhead{position:relative;height:168px;border-radius:20px;overflow:hidden;margin-top:2px;display:flex;align-items:center;justify-content:center}
+.x-dhead svg.fa{width:118px;height:142px;color:#7d5a30;position:relative;z-index:1}
+.x-dhead .vec path{stroke-dasharray:60;stroke-dashoffset:60}
+.app-screen.active .x-dhead .vec path{animation:draw 1.6s .3s var(--ease) forwards}
+.app-screen.active .x-dhead .vec path:nth-child(2){animation-delay:.45s}.app-screen.active .x-dhead .vec path:nth-child(3){animation-delay:.6s}.app-screen.active .x-dhead .vec path:nth-child(4){animation-delay:.75s}
+@keyframes draw{to{stroke-dashoffset:0}}
+.x-back{position:absolute;top:10px;left:10px;z-index:2;width:28px;height:28px;border-radius:50%;background:rgba(255,255,255,.6);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;color:#2a1d10}
+.x-back svg{width:14px;height:14px;transform:rotate(180deg)}
+.x-dt{display:flex;justify-content:space-between;align-items:flex-end;margin-top:12px}
+.x-dt .x-h{font-size:30px}
+.x-dt span{font-size:9px;padding:4px 8px;border-radius:999px;border:1px solid rgba(232,204,151,.3);color:var(--gold-l)}
+.x-p{font-size:10.5px;line-height:1.5;opacity:.78;margin-top:6px}
+.x-lbl{font-size:8.5px;letter-spacing:.22em;font-weight:800;opacity:.55;margin-top:12px}
+.x-chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.x-chips span{font-size:9.5px;font-weight:700;padding:6px 9px;border-radius:999px;background:rgba(201,164,106,.14);border:1px solid rgba(232,204,151,.3);color:#f4ead9}
+.x-cta{display:flex;align-items:center;justify-content:center;gap:6px;width:100%;margin-top:14px;padding:12px;border-radius:14px;font-weight:800;font-size:12px;color:#1a140a;background:linear-gradient(135deg,#f0dbb0,#c9a46a 60%,#a8844d);box-shadow:0 12px 22px -10px rgba(201,164,106,.7);position:relative;overflow:hidden}
+.x-cta::before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);animation:sweep 3.6s var(--ease) infinite}
+.x-cta svg{width:13px;height:13px}
+/* services */
+.x-search{display:flex;align-items:center;gap:8px;margin-top:10px;padding:9px 12px;border-radius:12px;background:rgba(255,255,255,.06);border:1px solid rgba(232,204,151,.15);font-size:10.5px;opacity:.85}
+.x-search svg{width:13px;height:13px;color:var(--gold-l)}
+.x-cats{display:flex;gap:5px;margin-top:9px;overflow:hidden}
+.x-cats button{flex:none;font-size:9.5px;font-weight:700;padding:6px 10px;border-radius:999px;border:1px solid rgba(232,204,151,.25);color:#f4ead9;transition:.3s}
+.x-cats button.on{background:var(--gold);color:#1a140a;border-color:var(--gold)}
+.x-list{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px;max-height:318px;overflow:hidden;padding-bottom:20px;-webkit-mask:linear-gradient(#000 85%,transparent);mask:linear-gradient(#000 85%,transparent)}
+@media (hover:hover){.x-list{overflow-y:auto;scrollbar-width:none}.x-list::-webkit-scrollbar{display:none}}
+.x-svc{border-radius:15px;overflow:hidden;background:rgba(255,255,255,.04);border:1px solid rgba(232,204,151,.14);text-align:left;transition:transform .3s var(--ease),opacity .3s}
+.x-svc:hover{transform:translateY(-2px)}
+.x-svc.hide{display:none}
+.x-svc .th{position:relative;height:66px;overflow:hidden;display:flex;align-items:center;justify-content:center}
+.x-svc .th svg.ic{position:relative;z-index:1;width:26px;height:26px;color:#fff6e3;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4))}
+.x-svc .bd{padding:7px 9px 9px}
+.x-svc b{display:block;font-size:10.5px;line-height:1.2}
+.x-svc .mb{font-style:normal;display:block;color:#f4ead9;opacity:.6;font-weight:600;font-size:7.5px;margin-top:1px}
+.x-svc small{font-size:8.5px;color:var(--gold-l);font-weight:700}
+.x-svc .hot{position:absolute;z-index:2;top:6px;left:6px;font-size:7px;font-weight:800;letter-spacing:.08em;padding:3px 6px;border-radius:5px;background:rgba(10,9,7,.7);color:var(--gold-l)}
+.x-svc.pick{box-shadow:0 0 0 1.5px var(--gold)}
+/* member */
+.x-member .gcard{margin-top:12px}
+.x-member .pts{margin-top:14px}
+#showScreen .tabbar span{cursor:pointer}
+.try{display:flex;align-items:center;gap:8px;position:absolute;left:50%;bottom:-74px;transform:translateX(-50%);white-space:nowrap;font-size:13px;font-weight:700;color:var(--gold-l);padding:9px 16px;border-radius:999px;border:1px solid rgba(232,204,151,.3);background:rgba(7,23,18,.6);backdrop-filter:blur(8px)}
+.try i{width:8px;height:8px;border-radius:50%;background:var(--gold);animation:ping 2s infinite;box-shadow:0 0 0 0 rgba(201,164,106,.7)}
+@media (max-width:760px){.try{display:none}}
+/* ===== Pain ===== */
+.pain{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}
+.pain-c{position:relative;background:#fffdf9;border:1px solid #e6dccb;border-radius:24px;padding:30px 26px 28px;overflow:hidden}
+.pain-c .n{font-family:var(--serif);font-style:italic;font-size:46px;line-height:1;color:#e3d3b8}
+.pain-c h3{font-family:var(--serif);font-size:26px;font-weight:600;line-height:1.08;color:var(--green-800);margin:14px 0 10px}
+.pain-c p{color:var(--muted);font-size:15px}
+.pain-c::after{content:"";position:absolute;left:26px;right:26px;bottom:0;height:3px;border-radius:3px 3px 0 0;background:linear-gradient(90deg,#a0412c,transparent)}
+.pain-out{margin-top:48px;display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:center;padding:34px 38px;border-radius:26px;background:var(--green-800);color:var(--cream)}
+.pain-out .big{font-family:var(--serif);font-size:clamp(28px,3vw,40px);font-weight:600;line-height:1.08;max-width:560px}
+.pain-out .big em{color:var(--gold-l)}
+.pain-out p{font-size:16.5px;color:rgba(246,240,231,.78);border-left:1px solid rgba(232,204,151,.3);padding-left:28px}
+/* ===== Blue ocean ===== */
+.ocean{background:radial-gradient(900px 500px at 85% 10%,rgba(201,164,106,.16),transparent 60%),linear-gradient(180deg,var(--green-950),var(--green-900));overflow:hidden}
+.ocean .sec-head{max-width:900px}
+.ocean .intro{color:rgba(246,240,231,.78);max-width:700px}
+.seas{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin:10px 0 70px}
+.sea{border-radius:24px;padding:30px 30px 32px;position:relative;overflow:hidden}
+.sea .k{font-size:11.5px;letter-spacing:.22em;text-transform:uppercase;font-weight:800}
+.sea h3{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.08;margin:12px 0 14px}
+.sea ul{list-style:none;display:grid;gap:10px;font-size:15.5px}
+.sea li{display:flex;gap:10px}
+.sea li::before{content:"—";opacity:.6}
+.sea-red{background:linear-gradient(150deg,rgba(110,47,34,.55),rgba(60,20,14,.4));border:1px solid rgba(240,160,130,.2);color:#f1dcd3}
+.sea-red .k{color:#f0a88e}
+.sea-blue{background:linear-gradient(150deg,rgba(201,164,106,.18),rgba(201,164,106,.04));border:1px solid rgba(232,204,151,.45);color:var(--cream);box-shadow:0 30px 70px -30px rgba(201,164,106,.35)}
+.sea-blue .k{color:var(--gold-l)}
+.sea-blue li::before{content:"✦";color:var(--gold);opacity:1}
+.why{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:40px;border-top:1px solid rgba(232,204,151,.2);padding-top:44px}
+.why .n{font-family:var(--serif);font-style:italic;font-size:22px;color:var(--gold)}
+.why h3{font-family:var(--serif);font-size:30px;font-weight:600;line-height:1.08;margin:10px 0 12px}
+.why p{color:rgba(246,240,231,.75);font-size:16px}
+.quote{margin-top:70px;text-align:center;font-family:var(--serif);font-size:clamp(34px,4.6vw,64px);line-height:1.04;font-weight:600;max-width:1000px;margin-inline:auto}
+.quote small{display:block;font-family:var(--sans);font-size:13px;letter-spacing:.24em;font-weight:700;color:var(--gold-l);margin-bottom:18px;text-transform:uppercase}
+/* ===== Fix grid ===== */
+.fix{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.fx{background:#fffdf9;border:1px solid #e6dccb;border-radius:24px;padding:28px 28px 30px;transition:transform .5s var(--ease),box-shadow .5s var(--ease);will-change:transform}
+.fx:hover{box-shadow:0 30px 60px -30px rgba(15,42,34,.35)}
+.fx .from{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;color:#9b4632;padding:6px 11px;border-radius:999px;background:#f8e9e3}
+.fx .from s{text-decoration-thickness:1.5px}
+.fx .arrow{display:block;width:22px;height:22px;margin:14px 0 6px;color:var(--gold-d);transform:rotate(90deg)}
+.fx h3{font-family:var(--serif);font-size:28px;font-weight:600;line-height:1.06;color:var(--green-800);margin-bottom:10px}
+.fx p{color:var(--muted);font-size:15.5px}
+.fx .fx-tag{display:inline-flex;align-items:center;gap:7px;margin-top:16px;font-size:12.5px;font-weight:700;color:var(--green-700)}
+.fx .fx-tag svg{width:15px;height:15px;color:var(--gold-d)}
+.fx-hl{background:linear-gradient(160deg,var(--green-800),var(--green-950));border-color:rgba(201,164,106,.45);color:var(--cream)}
+.fx-hl h3{color:var(--cream)}.fx-hl p{color:rgba(246,240,231,.75)}.fx-hl .fx-tag{color:var(--gold-l)}
+.fx-hl .from{background:rgba(255,255,255,.08);color:#f0b9a5}
+/* ===== Calculator ===== */
+.calc-sec{background:var(--green-900)}
+.calc{display:grid;grid-template-columns:1.05fr .95fr;gap:0;border-radius:30px;overflow:hidden;border:1px solid rgba(232,204,151,.25)}
+.calc-in{padding:44px 42px;background:rgba(255,255,255,.03)}
+.calc-out{padding:44px 42px;background:linear-gradient(160deg,#1a1408,#070604);position:relative;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+.calc-out::before{content:"";position:absolute;right:-120px;top:-120px;width:360px;height:360px;border-radius:50%;background:radial-gradient(closest-side,rgba(201,164,106,.3),transparent)}
+.fld{margin-bottom:30px}
+.fld:last-child{margin-bottom:0}
+.fld label{display:flex;justify-content:space-between;align-items:baseline;font-size:15px;font-weight:600;color:rgba(246,240,231,.85);margin-bottom:12px}
+.fld label output{font-family:var(--serif);font-size:30px;font-weight:600;color:var(--gold-l)}
+.fld small{display:block;font-size:12.5px;color:rgba(246,240,231,.5);margin-top:8px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:6px;border-radius:4px;background:linear-gradient(90deg,var(--gold) var(--p,50%),rgba(255,255,255,.12) var(--p,50%));outline:none}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:24px;height:24px;border-radius:50%;background:linear-gradient(135deg,#f3dcae,#b88d4f);border:3px solid #0b1f19;box-shadow:0 0 0 1px var(--gold),0 6px 14px rgba(0,0,0,.4);cursor:grab}
+input[type=range]::-moz-range-thumb{width:20px;height:20px;border-radius:50%;background:linear-gradient(135deg,#f3dcae,#b88d4f);border:3px solid #0b1f19;cursor:grab}
+.calc-out .k{position:relative;font-size:12px;letter-spacing:.24em;font-weight:800;color:var(--gold-l);text-transform:uppercase}
+.calc-out .res{position:relative;font-family:var(--sans);font-weight:800;font-size:clamp(52px,6vw,84px);letter-spacing:-.04em;line-height:1;margin:14px 0 6px;background:linear-gradient(100deg,var(--gold-d),var(--gold-l) 45%,#fff6df 55%,var(--gold-l));-webkit-background-clip:text;background-clip:text;color:transparent}
+.calc-out .per{position:relative;font-size:16px;color:rgba(246,240,231,.75)}
+.calc-out .split{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:26px 0}
+.calc-out .split div{border-radius:16px;padding:16px;background:rgba(255,255,255,.05);border:1px solid rgba(232,204,151,.18)}
+.calc-out .split b{display:block;font-family:var(--serif);font-size:30px;font-weight:600;color:#fff;line-height:1}
+.calc-out .split span{font-size:12.5px;color:rgba(246,240,231,.6)}
+.calc-out .btn{position:relative}
+.calc-note{position:relative;font-size:12px;color:rgba(246,240,231,.45);margin-top:16px}
+@media (max-width:1080px){
+  .pain{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .fix{grid-template-columns:repeat(2,minmax(0,1fr))}
+  .why{grid-template-columns:minmax(0,1fr);gap:30px}
+  .calc{grid-template-columns:minmax(0,1fr)}
+}
+@media (max-width:760px){
+  .pain,.fix,.seas{grid-template-columns:minmax(0,1fr)}
+  .pain-out{grid-template-columns:minmax(0,1fr);padding:28px 24px}
+  .pain-out p{border-left:0;padding-left:0;border-top:1px solid rgba(232,204,151,.3);padding-top:18px}
+  .calc-in,.calc-out{padding:30px 22px}
+  .seas{margin-bottom:50px}
+}
+/* Benefits */
+.benefits{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
+.b-card{background:#fff;border:1px solid #e8dfd0;border-radius:var(--radius);padding:34px 28px;transition:transform .5s var(--ease),box-shadow .5s var(--ease);transform-style:preserve-3d;will-change:transform}
+.b-card:hover{box-shadow:0 30px 60px -30px rgba(15,42,34,.35)}
+.b-ico{width:54px;height:54px;border-radius:16px;display:flex;align-items:center;justify-content:center;background:var(--green-800);color:var(--gold-l);margin-bottom:26px}
+.b-ico svg{width:24px;height:24px}
+.b-card h3{font-family:var(--serif);font-size:28px;font-weight:600;line-height:1.08;margin-bottom:12px;color:var(--green-800)}
+.b-card p{color:var(--muted);font-size:15.5px}
+
+/* Process */
+.process{background:var(--cream-2);color:var(--ink)}
+.timeline{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:28px}
+.timeline::before{content:"";position:absolute;top:31px;left:32px;right:32px;height:1px;background:#d4c6ae}
+.timeline .bar{position:absolute;top:31px;left:32px;height:1px;width:0;background:var(--gold-d);transition:width 2.2s var(--ease)}
+.timeline.in .bar{width:calc(100% - 64px)}
+.t-step{position:relative}
+.t-step .n{width:64px;height:64px;border-radius:50%;background:var(--green-800);color:var(--gold-l);display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:26px;font-style:italic;position:relative;z-index:2;box-shadow:0 0 0 8px var(--cream-2)}
+.t-step h3{font-family:var(--serif);font-size:28px;font-weight:600;margin:26px 0 10px;color:var(--green-800);line-height:1.1}
+.t-step p{color:var(--muted);font-size:15.5px}
+.pwa-note{margin-top:60px;display:flex;align-items:center;gap:22px;padding:26px 30px;border-radius:20px;background:var(--green-800);color:var(--cream)}
+.qr{width:72px;height:72px;flex:none;border-radius:12px;background:#fff;padding:8px;display:grid;grid-template-columns:repeat(7,1fr);gap:1.5px}
+.qr i{background:#111;border-radius:1px}
+.qr i.o{background:transparent}
+.pwa-note b{color:var(--gold-l)}
+
+/* Solutions — client journey */
+.journey{position:relative;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:26px;align-items:stretch}
+.j-line{position:absolute;left:8%;right:8%;top:150px;height:2px;z-index:0;pointer-events:none}
+.j-line svg{width:100%;height:40px;overflow:visible;transform:translateY(-19px)}
+.j-line path{fill:none;stroke:var(--gold);stroke-width:1.5;stroke-dasharray:6 8;opacity:.7}
+.j-line .runner{fill:var(--gold);filter:drop-shadow(0 0 6px var(--gold))}
+.jc{position:relative;z-index:1;background:#fffdf9;border:1px solid #e6dccb;border-radius:28px;overflow:hidden;display:flex;flex-direction:column;transition:transform .5s var(--ease),box-shadow .5s var(--ease);transform-style:preserve-3d;will-change:transform}
+.jc:hover{box-shadow:0 40px 70px -35px rgba(15,42,34,.45)}
+.jc-vis{position:relative;height:300px;overflow:hidden;display:flex;align-items:center;justify-content:center;perspective:900px}
+.jc-ads .jc-vis{background:radial-gradient(circle at 30% 20%,#a24d36,transparent 60%),linear-gradient(150deg,#7a3424,#3f170f)}
+.jc-site .jc-vis{background:radial-gradient(circle at 70% 20%,#fff7ea,transparent 60%),linear-gradient(150deg,#efe2cc,#dcc7a5)}
+.jc-app .jc-vis{background:radial-gradient(circle at 60% 30%,rgba(201,164,106,.35),transparent 60%),linear-gradient(150deg,var(--green-700),var(--green-950))}
+.jc-body{padding:30px 30px 34px;display:flex;flex-direction:column;flex:1}
+.jc-step{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-style:italic;font-size:19px;color:var(--gold-d)}
+.jc-step b{font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.jc h3{font-family:var(--serif);font-size:32px;font-weight:600;line-height:1.06;margin:12px 0 12px;color:var(--green-800)}
+.jc p{color:var(--muted);font-size:15.5px}
+.jc-tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin-top:20px}
+.jc-tags li{font-size:12.5px;font-weight:600;padding:7px 12px;border-radius:999px;background:var(--cream);border:1px solid #e3d7c3;color:#4c463d}
+.jc-app{background:linear-gradient(170deg,var(--green-800),var(--green-950));border:1px solid rgba(201,164,106,.5);box-shadow:0 40px 80px -40px rgba(11,31,25,.7)}
+.jc-app h3{color:var(--cream)}
+.jc-app p{color:rgba(246,240,231,.75)}
+.jc-app .jc-step b{color:var(--gold-l)}
+.jc-app .jc-tags li{background:rgba(255,255,255,.06);border-color:rgba(232,204,151,.25);color:var(--cream)}
+.jc-badge{position:absolute;top:18px;right:18px;z-index:3;font-size:11.5px;font-weight:800;letter-spacing:.06em;padding:7px 12px;border-radius:9px;background:#050505;color:var(--gold-l);border:1px solid rgba(201,164,106,.5)}
+.chip{position:absolute;z-index:3;display:flex;align-items:center;gap:8px;padding:9px 13px;border-radius:12px;font-size:12px;font-weight:700;background:rgba(255,255,255,.95);color:var(--ink);box-shadow:0 14px 30px -12px rgba(0,0,0,.45);animation:bob 5s ease-in-out infinite}
+.chip svg{width:15px;height:15px;color:var(--gold-d)}
+.chip.dark{background:rgba(10,9,7,.85);color:var(--gold-l);border:1px solid rgba(201,164,106,.4);backdrop-filter:blur(6px)}
+@keyframes bob{50%{transform:translateY(-8px)}}
+/* ===== premium device scenes ===== */
+.jc-vis{height:360px}
+.jc-ads .jc-vis{background:radial-gradient(500px 300px at 20% 0%,rgba(230,160,120,.35),transparent 60%),linear-gradient(160deg,#5a2418,#21090500 120%),#2a0f0a}
+.jc-site .jc-vis{background:radial-gradient(400px 260px at 80% 10%,#fffaf1,transparent 60%),linear-gradient(160deg,#ede0c9,#d3bb94)}
+.jc-app .jc-vis{background:radial-gradient(420px 300px at 70% 20%,rgba(201,164,106,.32),transparent 60%),linear-gradient(160deg,#173d31,#06140f)}
+.jc-vis::after{content:"";position:absolute;inset:0;pointer-events:none;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.09'/%3E%3C/svg%3E");mix-blend-mode:overlay}
+.dev{position:absolute;left:50%;margin-left:-145px;top:22px;transform-origin:top center;transition:transform 1s var(--ease)}
+.dev .phone{box-shadow:0 0 0 1.5px #5c564d inset,0 60px 90px -20px rgba(0,0,0,.85)}
+.art{position:absolute;inset:0;width:100%;height:100%}
+/* 1 · story */
+.d-story{transform:scale(.53) rotateY(16deg) rotateZ(-4deg)}
+.jc:hover .d-story{transform:scale(.55) rotateY(0) rotateZ(0)}
+.story{position:absolute;inset:0;color:#fff}
+.story .bars{position:absolute;top:52px;left:16px;right:16px;display:flex;gap:4px;z-index:2}
+.story .bars i{flex:1;height:2.5px;border-radius:2px;background:rgba(255,255,255,.35);overflow:hidden}
+.story .bars i:first-child::after{content:"";display:block;height:100%;width:100%;background:#fff;transform-origin:left;animation:storybar 5s linear infinite}
+@keyframes storybar{from{transform:scaleX(0)}}
+.story .who{position:absolute;top:66px;left:16px;right:16px;display:flex;align-items:center;gap:9px;font-size:12px;font-weight:700;z-index:2}
+.story .who i{width:30px;height:30px;border-radius:50%;padding:2px;background:linear-gradient(135deg,#f3d9a4,#9c7a45)}
+.story .who i::after{content:"L";display:flex;align-items:center;justify-content:center;width:100%;height:100%;border-radius:50%;background:#1a0d08;font-family:var(--serif);font-style:italic;color:var(--gold-l);font-size:15px}
+.story .who small{display:block;font-weight:500;font-size:10px;opacity:.75}
+.story .copy{position:absolute;left:22px;right:22px;bottom:118px;z-index:2}
+.story .copy span{font-size:10px;letter-spacing:.3em;font-weight:700;color:var(--gold-l)}
+.story .copy h6{font-family:var(--serif);font-weight:600;font-size:46px;line-height:.95;margin-top:10px;text-shadow:0 6px 30px rgba(0,0,0,.4)}
+.story .copy h6 em{color:var(--gold-l)}
+.story .copy p{font-size:12px;opacity:.8;margin-top:10px}
+.story .cta{position:absolute;left:50%;bottom:44px;transform:translateX(-50%);z-index:2;display:flex;flex-direction:column;align-items:center;gap:6px;font-size:11px;font-weight:700}
+.story .cta b{background:#fff;color:#1a0d08;padding:10px 22px;border-radius:999px;font-size:12.5px;box-shadow:0 10px 24px -8px rgba(0,0,0,.6)}
+.story .cta svg{width:14px;height:14px;transform:rotate(-90deg)}
+.glass{position:absolute;z-index:4;padding:11px 14px;border-radius:14px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);color:#fff;font-size:11.5px;box-shadow:0 18px 40px -16px rgba(0,0,0,.6);animation:bob 6s ease-in-out infinite}
+.glass b{display:block;font-size:12.5px}
+.glass small{opacity:.7;font-size:10.5px}
+.glass.light{background:rgba(255,255,255,.82);color:var(--ink);border-color:rgba(255,255,255,.9)}
+.glass .row{display:flex;align-items:center;gap:10px}
+.glass .ic{width:28px;height:28px;border-radius:8px;flex:none;display:flex;align-items:center;justify-content:center;background:linear-gradient(135deg,#ecd3a3,#9c7a45);color:#1a140a}
+.glass .ic svg{width:15px;height:15px}
+.meter{display:flex;gap:3px;align-items:flex-end;height:22px;margin-top:6px}
+.meter i{width:5px;border-radius:2px;background:linear-gradient(var(--gold-l),var(--gold-d));animation:eq 2.4s ease-in-out infinite}
+.meter i:nth-child(2){animation-delay:.2s}.meter i:nth-child(3){animation-delay:.4s}.meter i:nth-child(4){animation-delay:.6s}.meter i:nth-child(5){animation-delay:.8s}.meter i:nth-child(6){animation-delay:1s}
+@keyframes eq{0%,100%{height:30%}50%{height:100%}}
+/* 2 · laptop + mobile site */
+.lap{position:absolute;left:22px;top:58px;width:300px;transform:rotateY(18deg) rotateX(6deg);transform-origin:left center;transition:transform 1s var(--ease);filter:drop-shadow(0 40px 40px rgba(60,35,5,.4))}
+.jc:hover .lap{transform:rotateY(6deg) rotateX(2deg)}
+.lap-scr{height:190px;border:7px solid #141210;border-bottom-width:9px;border-radius:12px 12px 2px 2px;overflow:hidden;position:relative;background:#0e2620}
+.lap-base{height:9px;margin:0 -24px;border-radius:2px 2px 12px 12px;background:linear-gradient(#e2ddd6,#8f8a82);position:relative}
+.lap-base::after{content:"";position:absolute;left:42%;right:42%;top:0;height:3px;border-radius:0 0 4px 4px;background:#6f6a62}
+.ws{position:absolute;inset:0;display:grid;grid-template-columns:1.15fr .85fr;color:var(--cream)}
+.ws-l{padding:12px 14px;position:relative;z-index:1}
+.ws-nav{display:flex;align-items:center;gap:10px;font-size:5.5px;opacity:.85;margin-bottom:22px}
+.ws-nav b{font-family:var(--serif);font-style:italic;font-size:10px;color:var(--gold-l);margin-right:auto}
+.ws-nav u{text-decoration:none;padding:2.5px 5px;border-radius:3px;background:var(--gold);color:#1a140a;font-weight:700}
+.ws-k{font-size:5px;letter-spacing:.3em;color:var(--gold-l);font-weight:700}
+.ws h5{font-family:var(--serif);font-weight:600;font-size:22px;line-height:.95;margin:6px 0 7px}
+.ws h5 em{color:var(--gold-l)}
+.ws p{font-size:5.5px;opacity:.7;line-height:1.5;max-width:120px}
+.ws .bt{display:inline-block;margin-top:8px;font-size:5.5px;font-weight:700;padding:4px 8px;border-radius:3px;background:linear-gradient(135deg,#ecd3a3,#c9a46a);color:#1a140a}
+.ws-r{position:relative;overflow:hidden}
+.ws-arch{position:absolute;left:8px;right:14px;top:16px;bottom:-10px;border-radius:80px 80px 0 0;overflow:hidden;box-shadow:0 0 0 1px rgba(232,204,151,.3)}
+.ws-strip{position:absolute;left:0;right:0;bottom:0;display:flex;justify-content:space-around;padding:6px;font-size:5px;letter-spacing:.2em;color:rgba(246,240,231,.6);border-top:1px solid rgba(232,204,151,.15);background:rgba(6,20,15,.6);z-index:2}
+.d-msite{left:auto;right:16px;top:auto;bottom:22px;margin:0;transform-origin:bottom right;transform:scale(.36) rotateY(-14deg)}
+.jc:hover .d-msite{transform:scale(.38) rotateY(0)}
+.ms{position:absolute;inset:0;background:#0e2620;color:var(--cream)}
+.ms .ws-nav{padding:56px 20px 0;font-size:11px;margin-bottom:0}
+.ms .ws-nav b{font-size:20px}
+.ms-arch{position:relative;margin:22px 20px 0;height:250px;border-radius:120px 120px 14px 14px;overflow:hidden}
+.ms h5{font-family:var(--serif);font-weight:600;font-size:44px;line-height:.95;padding:20px 20px 0}
+.ms h5 em{color:var(--gold-l)}
+.ms .bt{margin:16px 20px 0;display:inline-block;font-size:14px;font-weight:800;padding:12px 20px;border-radius:10px;background:linear-gradient(135deg,#ecd3a3,#c9a46a);color:#1a140a}
+/* 3 · app: splash + membership */
+.d-splash{transform:translateX(-78px) translateY(30px) scale(.44) rotateY(22deg) rotateZ(-6deg);filter:brightness(.8)}
+.d-member{transform:translateX(52px) scale(.52) rotateY(-14deg) rotateZ(2deg)}
+.jc:hover .d-splash{transform:translateX(-92px) translateY(30px) scale(.45) rotateY(10deg) rotateZ(-8deg)}
+.jc:hover .d-member{transform:translateX(56px) scale(.54) rotateY(0) rotateZ(0)}
+.splash{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#2a2116;text-align:center}
+.mono{position:relative;z-index:2;width:110px;height:110px;border-radius:50%;border:1.5px solid #b08c55;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-style:italic;font-size:64px;color:#8f6c38;background:rgba(255,255,255,.35);backdrop-filter:blur(2px)}
+.mono::before{content:"";position:absolute;inset:7px;border-radius:50%;border:.75px solid rgba(176,140,85,.6)}
+.splash h6{position:relative;z-index:2;margin-top:22px;font-family:var(--sans);font-size:12px;letter-spacing:.5em;font-weight:700;color:#5e4a2c}
+.splash p{position:relative;z-index:2;font-family:var(--serif);font-style:italic;font-size:17px;margin-top:6px;color:#7a6342}
+.splash .go{position:absolute;z-index:2;bottom:46px;left:28px;right:28px;padding:14px;border-radius:14px;background:#1a1510;color:var(--gold-l);font-weight:800;font-size:13px}
+.member{position:absolute;inset:44px 0 0;padding:12px 18px}
+.member .top{display:flex;justify-content:space-between;align-items:center}
+.member .top b{font-family:var(--serif);font-size:26px;font-weight:600}
+.member .top i{width:34px;height:34px;border-radius:50%;background:linear-gradient(135deg,#ecd3a3,#9c7a45);display:flex;align-items:center;justify-content:center;font-style:normal;font-family:var(--serif);color:#1a140a;font-weight:700}
+.gcard{position:relative;margin-top:16px;height:156px;border-radius:18px;padding:16px 18px;overflow:hidden;color:#2a1d0b;
+  background:linear-gradient(125deg,#f6e3bb 0%,#d4ad6c 28%,#f3dcae 46%,#b88d4f 70%,#e9cf9c 100%);
+  box-shadow:0 22px 40px -14px rgba(0,0,0,.8),inset 0 1px 0 rgba(255,255,255,.7),inset 0 -1px 0 rgba(0,0,0,.2)}
+.gcard::after{content:"";position:absolute;inset:-50%;background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.75) 50%,transparent 60%);animation:cardshine 4.5s var(--ease) infinite}
+@keyframes cardshine{0%,40%{transform:translateX(-60%)}100%{transform:translateX(60%)}}
+.gcard .art{opacity:.35;mix-blend-mode:multiply}
+.gcard .g1{position:relative;z-index:1;display:flex;justify-content:space-between;align-items:center;font-size:9px;letter-spacing:.32em;font-weight:800}
+.gcard .g1 svg{width:22px;height:22px}
+.gcard .chipc{position:relative;z-index:1;width:34px;height:26px;border-radius:6px;margin-top:14px;background:linear-gradient(135deg,#fff4d9,#b08c55);box-shadow:inset 0 0 0 1px rgba(90,60,20,.35)}
+.gcard .g2{position:absolute;z-index:1;left:18px;right:18px;bottom:14px;display:flex;justify-content:space-between;align-items:flex-end}
+.gcard .g2 b{font-family:var(--serif);font-size:22px;font-weight:600;font-style:italic;display:block;line-height:1}
+.gcard .g2 small{font-size:8.5px;letter-spacing:.24em;font-weight:800;opacity:.75}
+.gcard .g2 span{font-size:9px;font-weight:800;letter-spacing:.14em;text-align:right}
+.pts{display:flex;justify-content:space-between;align-items:flex-end;margin-top:18px}
+.pts b{font-family:var(--serif);font-size:40px;line-height:.9;font-weight:600}
+.pts b small{font-family:var(--sans);font-size:11px;opacity:.6;margin-left:4px}
+.pts span{font-size:10px;opacity:.7;text-align:right}
+.member .progress{margin-top:10px}
+.member .progress i{width:72%}
+.perks{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:16px}
+.perks div{border-radius:14px;padding:12px;background:rgba(255,255,255,.05);border:1px solid rgba(232,204,151,.18);font-size:10px}
+.perks b{display:block;font-family:var(--serif);font-size:20px;color:var(--gold-l);line-height:1.05}
+.member .a-btn{margin-top:14px;display:flex;align-items:center;justify-content:center;gap:8px}
+.member .a-btn svg{width:14px;height:14px}
+@media (max-width:760px){
+  .jc-vis{height:340px}
+  .lap{left:12px;width:270px}
+  .lap-scr{height:172px}
+  .d-msite{right:8px}
+}
+.sol-cta{margin-top:34px;display:flex;align-items:center;justify-content:space-between;gap:24px;flex-wrap:wrap;padding:26px 32px;border-radius:22px;background:#fffdf9;border:1px solid #e6dccb}
+.sol-cta p{font-family:var(--serif);font-size:26px;font-weight:600;color:var(--green-800);line-height:1.15}
+.sol-cta p span{display:block;font-family:var(--sans);font-size:15px;font-weight:500;color:var(--muted);margin-top:4px}
+.sol-cta .btn{background:var(--green-800);color:var(--gold-l)}
+.sol-cta .btn:hover{transform:translateY(-2px);box-shadow:0 14px 30px -12px rgba(15,42,34,.6)}
+@media (max-width:1080px){
+  .journey{grid-template-columns:minmax(0,1fr);max-width:560px;margin-inline:auto}
+  .j-line{display:none}
+  .jc+.jc::before{content:"";position:absolute;left:50%;top:-26px;width:1px;height:26px;background:var(--gold)}
+}
+@media (max-width:760px){
+  .jc-body{padding:24px 22px 28px}
+  .jc h3{font-size:28px}
+  .sol-cta{padding:22px}
+  .sol-cta .btn{width:100%}
+}
+
+/* Black Friday offer */
+.bf{background:#050505;overflow:hidden;color:var(--cream)}
+.bf::before{content:"";position:absolute;inset:0;background:radial-gradient(900px 500px at 80% 20%,rgba(201,164,106,.18),transparent 60%),radial-gradient(700px 400px at 0% 100%,rgba(110,47,34,.35),transparent 60%)}
+.bf-big{position:absolute;left:0;right:0;top:40px;font-family:var(--sans);font-weight:800;font-size:clamp(90px,17vw,260px);line-height:.85;letter-spacing:-.05em;white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(201,164,106,.18);text-align:center;pointer-events:none;user-select:none}
+.bf-inner{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:60px;align-items:center}
+.bf h2{font-family:var(--serif);font-size:clamp(42px,5.4vw,76px);font-weight:600;line-height:1}
+.bf .off{display:inline-block;font-family:var(--sans);font-weight:800;font-size:clamp(70px,9vw,130px);letter-spacing:-.05em;line-height:1;background:linear-gradient(100deg,var(--gold-d),var(--gold-l) 40%,#fff6df 50%,var(--gold-l) 60%,var(--gold-d));background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:shine 4s linear infinite;margin:10px 0}
+.bf ul{list-style:none;display:grid;gap:14px;margin:28px 0 34px}
+.bf li{display:flex;gap:12px;align-items:flex-start;font-size:17px}
+.bf li svg{width:22px;height:22px;color:var(--gold);flex:none;margin-top:2px}
+.bf-card{border-radius:28px;padding:40px 34px;background:linear-gradient(160deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid rgba(201,164,106,.35);backdrop-filter:blur(10px);text-align:center;position:relative}
+.bf-card::before{content:"";position:absolute;inset:-1px;border-radius:28px;padding:1px;background:conic-gradient(from var(--a,0deg),transparent 0 70%,var(--gold-l) 80%,transparent 90%);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;animation:rot 5s linear infinite}
+@property --a{syntax:'<angle>';inherits:false;initial-value:0deg}
+@keyframes rot{to{--a:360deg}}
+.bf-card .k{font-size:12px;letter-spacing:.24em;text-transform:uppercase;color:var(--gold-l);font-weight:700}
+.count{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:22px 0 26px}
+.count div{border-radius:16px;background:rgba(0,0,0,.5);border:1px solid rgba(201,164,106,.25);padding:16px 4px}
+.count b{display:block;font-family:var(--serif);font-size:44px;line-height:1;font-variant-numeric:tabular-nums;color:#fff}
+.count small{font-size:11px;letter-spacing:.14em;text-transform:uppercase;opacity:.6}
+.spots{font-size:14px;margin-top:18px;opacity:.8}
+.spots-bar{height:6px;border-radius:4px;background:rgba(255,255,255,.1);margin-top:10px;overflow:hidden}
+.spots-bar i{display:block;height:100%;background:linear-gradient(90deg,var(--gold-d),var(--gold-l));width:0;transition:width 1.6s var(--ease)}
+.bf-card .btn{width:100%}
+
+/* FAQ */
+.faq{max-width:880px;margin-inline:auto}
+.faq details{border-bottom:1px solid #ddd1bd;padding:6px 0}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:22px 0;font-family:var(--serif);font-size:26px;font-weight:600;color:var(--green-800)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary i{width:34px;height:34px;flex:none;border-radius:50%;border:1px solid #cdbfa6;position:relative;transition:transform .4s var(--ease),background .4s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:1.5px;background:var(--green-800);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s}
+.faq details[open] summary i{background:var(--green-800)}
+.faq details[open] summary i::before{background:var(--gold-l)}
+.faq details[open] summary i::after{transform:translate(-50%,-50%) rotate(0);background:var(--gold-l)}
+.faq p{padding:0 50px 24px 0;color:var(--muted);font-size:16.5px}
+
+/* Final CTA */
+.final{text-align:center;overflow:hidden;background:radial-gradient(900px 500px at 50% 0%,rgba(201,164,106,.2),transparent 65%),linear-gradient(180deg,var(--green-800),var(--green-950))}
+.final h2{font-family:var(--serif);font-size:clamp(44px,6.4vw,96px);font-weight:600;line-height:.98;max-width:1000px;margin:20px auto 26px}
+.final p{font-size:19px;color:rgba(246,240,231,.8);max-width:600px;margin:0 auto 40px}
+.final .ctas{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.final .mini-phones{display:flex;justify-content:center;gap:-20px;margin-top:80px;perspective:1200px}
+.final .mini-phones .phone{--w:180px;margin:0 -18px}
+.final .mini-phones .phone:nth-child(1){transform:rotateY(24deg) translateZ(-60px) translateY(30px)}
+.final .mini-phones .phone:nth-child(2){transform:translateZ(40px);z-index:2}
+.final .mini-phones .phone:nth-child(3){transform:rotateY(-24deg) translateZ(-60px) translateY(30px)}
+.final .mini-phones .app-screen{inset:30px 0 0;padding:8px 12px;opacity:1;transform:none}
+.final .mini-phones .status{padding:10px 16px 0;font-size:8px}
+.final .mini-phones .phone::before{top:14px;height:16px}
+.mini{transform:scale(.62);transform-origin:top left;width:161%}
+
+footer{background:var(--green-950);border-top:1px solid rgba(201,164,106,.15);padding:50px 0 40px;font-size:14px;color:rgba(246,240,231,.6)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:30px;flex-wrap:wrap}
+footer .links{display:flex;gap:26px}
+footer a:hover{color:var(--gold-l)}
+
+/* Floating WhatsApp */
+.wa{position:fixed;right:20px;bottom:20px;z-index:70;width:60px;height:60px;border-radius:50%;background:linear-gradient(135deg,var(--gold-l),var(--gold-d));display:flex;align-items:center;justify-content:center;box-shadow:0 14px 30px -8px rgba(0,0,0,.5);transform:scale(0);transition:transform .5s var(--ease)}
+.wa.show{transform:scale(1)}
+.wa svg{width:28px;height:28px;color:#1a140a}
+
+/* ---------- Responsive ---------- */
+@media (max-width:1080px){
+  .nav-links{display:none}
+  .menu-btn{display:block}
+  .nav .btn{display:none}
+  .nav-links.open{display:flex;position:absolute;top:78px;left:0;right:0;flex-direction:column;gap:0;background:rgba(7,23,18,.97);backdrop-filter:blur(14px);padding:10px 16px 20px;border-bottom:1px solid rgba(201,164,106,.2)}
+  .nav-links.open a{padding:14px 0;border-bottom:1px solid rgba(255,255,255,.06)}
+  .hero-grid{grid-template-columns:1fr}
+  .scene{height:560px;max-width:620px;margin:0 auto;width:100%}
+  .benefits{grid-template-columns:repeat(2,1fr)}
+  .bf-inner{grid-template-columns:1fr}
+  .timeline{grid-template-columns:repeat(2,1fr);row-gap:50px}
+  .timeline::before,.timeline .bar{display:none}
+}
+@media (max-width:760px){
+  .hero{padding-top:20px}
+  .hero-ctas .btn{width:100%;white-space:normal;text-align:center}
+  .scene{height:480px}
+  .browser{width:300px;height:220px;left:-4%;top:110px}
+  .browser .page h4{font-size:22px}
+  .hero-phone-pos{right:2%}
+  .tag-app{right:0;bottom:30px;font-size:12px}
+  .tag-site{top:70px;font-size:12px}
+  .vs{grid-template-columns:1fr}
+  .vs-mid span{width:52px;height:52px}
+  .vs-card{padding:34px 26px}
+  .show-grid{grid-template-columns:minmax(0,1fr);gap:0}
+  .show .sec-head{margin-bottom:24px}
+  /* phone keeps full-size UI and is scaled as a whole, so nothing clips */
+  .sticky-phone{order:-1;height:auto;top:78px;padding:18px 0 22px;z-index:4;background:var(--green-900);margin-inline:-16px}
+  .sticky-phone::after{content:"";position:absolute;left:0;right:0;top:100%;height:46px;background:linear-gradient(180deg,var(--green-900),transparent);pointer-events:none}
+  .sp-inner{transform:scale(.52) rotateY(var(--sry,-10deg)) rotateX(4deg);transform-origin:top center;margin-bottom:-288px}
+  .sp-inner::after{display:none}
+  .sp-halo{display:block;width:300px;height:300px;top:10px}
+  .sp-orbit{display:block;width:270px;height:270px;top:30px}
+  .dots{display:none}
+  .steps .step{min-height:64vh;justify-content:flex-start;padding:28px 0 20px}
+  .wa{width:52px;height:52px;right:14px;bottom:14px}
+  .wa svg{width:24px;height:24px}
+  .step h3{font-size:34px}
+  .step p{font-size:16.5px}
+  .bf-inner,.vs,.benefits,.timeline,.hero-grid{grid-template-columns:minmax(0,1fr)}
+  .btn-lg{white-space:normal;text-align:center;padding:19px 22px;font-size:16px}
+  .bf-card{padding:30px 18px}
+  .bf-card .k{letter-spacing:.16em}
+  .bf h2{font-size:40px}
+  .bf li{font-size:16px}
+  .bf-big{top:30px}
+  .count{gap:8px}
+  .count small{font-size:9.5px;letter-spacing:.08em}
+  .hero-phone-pos .phone{--w:290px;transform:scale(.74);transform-origin:top right}
+  .benefits{grid-template-columns:1fr}
+  .timeline{grid-template-columns:1fr}
+  .pwa-note{flex-direction:column;align-items:flex-start}
+  .count b{font-size:34px}
+  .faq summary{font-size:22px}
+  .faq p{padding-right:0}
+  .final .mini-phones{transform:scale(.66);transform-origin:top center;margin-bottom:-130px}
+  .bf-bar{font-size:12.5px}
+  .bf-bar .wrap{gap:8px 12px}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+  .hero h1 .line>span{transform:none}
+}
+</style>
+</head>
+<body>
+
+<!-- SVG icon sprite -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-lotus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M12 20c-4 0-8-3-9-7 3 0 6 1 9 4 3-3 6-4 9-4-1 4-5 7-9 7Z"/><path d="M12 17c-2-2-3-5-3-8 1 0 2 1 3 2 1-1 2-2 3-2 0 3-1 6-3 8Z"/><path d="M12 11c0-3 0-5 0-7"/><path d="M8.5 15C6 13 5 10 5.5 7c1.5.3 3 1.3 4 2.5"/><path d="M15.5 15c2.5-2 3.5-5 3-8-1.5.3-3 1.3-4 2.5"/></symbol>
+    <symbol id="i-cal" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15" rx="3"/><path d="M8 3v4M16 3v4M3.5 10h17M8 14h2M14 14h2M8 17h2"/></symbol>
+    <symbol id="i-layers" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="m12 3 9 5-9 5-9-5 9-5Z"/><path d="m3 13 9 5 9-5"/><path d="m3 17 9 5 9-5" opacity=".5"/></symbol>
+    <symbol id="i-gift" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="8" width="17" height="4" rx="1"/><path d="M5 12v8h14v-8M12 8v12M12 8S10.5 3.5 8 4.5 9 8 12 8Zm0 0s1.5-4.5 4-3.5S15 8 12 8Z"/></symbol>
+    <symbol id="i-bell" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6 16V11a6 6 0 1 1 12 0v5l1.5 2h-15L6 16Z"/><path d="M10 20a2 2 0 0 0 4 0"/></symbol>
+    <symbol id="i-book" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3H20v15H6.5A2.5 2.5 0 0 0 4 20.5v-15Z"/><path d="M4 20.5A2.5 2.5 0 0 1 6.5 18H20v3H6.5"/></symbol>
+    <symbol id="i-user" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="8" r="4"/><path d="M4 21c1.5-4 4.5-6 8-6s6.5 2 8 6"/></symbol>
+    <symbol id="i-home" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M4 10.5 12 4l8 6.5V20h-5.5v-6h-5v6H4v-9.5Z"/></symbol>
+    <symbol id="i-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></symbol>
+    <symbol id="i-chev" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><path d="m9 6 6 6-6 6"/></symbol>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9.5"/><path d="m8 12.5 2.7 2.7L16.5 9"/></symbol>
+    <symbol id="i-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="12" cy="12" r="9.5"/><path d="m9 9 6 6M15 9l-6 6"/></symbol>
+    <symbol id="i-play" viewBox="0 0 24 24" fill="currentColor"><path d="M8 5.5v13l11-6.5-11-6.5Z"/></symbol>
+    <symbol id="i-heart" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"><path d="M12 20s-7.5-4.6-7.5-10A4.3 4.3 0 0 1 12 7.6 4.3 4.3 0 0 1 19.5 10c0 5.4-7.5 10-7.5 10Z"/></symbol>
+    <symbol id="i-euro" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><path d="M17 6.5A7 7 0 1 0 17 17.5M4 10h9M4 14h9"/></symbol>
+    <symbol id="i-gem" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M6 4h12l3.5 5L12 20.5 2.5 9 6 4Z"/><path d="M2.5 9h19M9 4l3 16.5L15 4M8.5 9 12 4l3.5 5"/></symbol>
+    <symbol id="i-clock" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></symbol>
+    <symbol id="i-wa" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.5 14.2c-.2.6-1.3 1.2-1.8 1.3-.5 0-1 .3-3.3-.7-2.8-1.1-4.6-4-4.7-4.2-.1-.2-1.1-1.5-1.1-2.8s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.4.6-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.2 1 2.1 1.4 2.4 1.5.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.6-.1l1.9.9c.3.1.5.2.5.3.1.2.1.7-.1 1.3Z"/></symbol>
+    <linearGradient id="silkA" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#fff3d6" stop-opacity="0"/><stop offset=".45" stop-color="#f6dca8"/><stop offset=".6" stop-color="#c9a46a"/><stop offset="1" stop-color="#5a3c18" stop-opacity="0"/></linearGradient>
+    <linearGradient id="silkB" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a2410" stop-opacity="0"/><stop offset=".5" stop-color="#e8c58a"/><stop offset="1" stop-color="#2a1608" stop-opacity="0"/></linearGradient>
+    <linearGradient id="silkW" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#ffd9c2" stop-opacity="0"/><stop offset=".5" stop-color="#f2b593"/><stop offset=".7" stop-color="#b8583c"/><stop offset="1" stop-color="#3a110a" stop-opacity="0"/></linearGradient>
+    <radialGradient id="bgGold" cx=".7" cy=".3" r=".9"><stop offset="0" stop-color="#4a3218"/><stop offset=".6" stop-color="#17110a"/><stop offset="1" stop-color="#080605"/></radialGradient>
+    <radialGradient id="bgWine" cx=".7" cy=".25" r=".95"><stop offset="0" stop-color="#8a3a26"/><stop offset=".55" stop-color="#3a140c"/><stop offset="1" stop-color="#140605"/></radialGradient>
+    <filter id="soft"><feGaussianBlur stdDeviation="2.2"/></filter>
+    <filter id="marbleF" x="0" y="0" width="100%" height="100%"><feTurbulence type="fractalNoise" baseFrequency=".006 .022" numOctaves="5" seed="7"/><feColorMatrix type="matrix" values="0 0 0 0 .55  0 0 0 0 .5  0 0 0 0 .44  -2.4 0 0 0 1.25"/></filter>
+    <symbol id="art-gold" viewBox="0 0 300 600" preserveAspectRatio="xMidYMid slice">
+      <rect width="300" height="600" fill="url(#bgGold)"/>
+      <path d="M-40 520C40 380 120 470 200 300S330 160 360 90L360 170C300 260 260 300 210 380S70 520 -40 600Z" fill="url(#silkB)" opacity=".55"/>
+      <path d="M-60 430C60 300 140 420 230 250S340 120 380 60L380 110C320 200 290 260 240 330S90 470 -60 500Z" fill="url(#silkA)"/>
+      <path d="M-60 455C60 320 150 430 236 270S350 140 380 85" stroke="#fff6e0" stroke-width="1.2" fill="none" opacity=".8" filter="url(#soft)"/>
+      <path d="M-30 610C90 470 180 560 260 420S360 330 380 300L380 340C330 400 300 440 260 490S110 620 -30 640Z" fill="url(#silkA)" opacity=".5"/>
+    </symbol>
+    <symbol id="art-wine" viewBox="0 0 300 600" preserveAspectRatio="xMidYMid slice">
+      <rect width="300" height="600" fill="url(#bgWine)"/>
+      <ellipse cx="210" cy="230" rx="120" ry="160" fill="#f2b593" opacity=".18" filter="url(#soft)"/>
+      <path d="M-50 470C50 330 150 460 230 280S330 150 370 80L370 160C310 250 280 300 230 380S80 520 -50 560Z" fill="url(#silkW)"/>
+      <path d="M-50 500C60 360 160 480 240 310S340 190 370 130" stroke="#ffe7d6" stroke-width="1.4" fill="none" opacity=".75" filter="url(#soft)"/>
+      <path d="M-40 360C60 250 120 330 190 210S300 60 340 0L360 40C300 120 250 200 200 270S60 390 -40 410Z" fill="url(#silkW)" opacity=".45"/>
+    </symbol>
+    <symbol id="art-marble" viewBox="0 0 300 600" preserveAspectRatio="xMidYMid slice">
+      <rect width="300" height="600" fill="#f4ede2"/>
+      <rect width="300" height="600" filter="url(#marbleF)" opacity=".55"/>
+      <path d="M-20 140C80 180 120 120 200 210S280 260 330 240" stroke="#b9a68a" stroke-width=".8" fill="none" opacity=".6"/>
+      <path d="M-20 420C60 380 140 470 210 400S300 380 330 420" stroke="#c4b293" stroke-width=".6" fill="none" opacity=".5"/>
+    </symbol>
+    <symbol id="face" viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M50 8C28 8 18 26 19 50c1 22 10 40 20 50 5 5 9 7 11 7s6-2 11-7c10-10 19-28 20-50 1-24-9-42-31-42Z"/><path d="M30 45q8-5 15-1M55 44q7-4 15 1"/><path d="M31 55q6 4 12 0M57 55q6 4 12 0"/><path d="M50 56v15q-4 3 1 5"/><path d="M42 86q4-2 8 0q4-2 8 0q-8 6-16 0Z"/></symbol>
+    <symbol id="ov-flacidez" viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M22 70l6 14M25 82l3 3 2-4M78 70l-6 14M75 82l-3 3-2-4M44 104l6 6 6-6"/></symbol>
+    <symbol id="ov-rugas" viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round"><path d="M34 28q4-2 8 0t8 0 8 0 8 0M36 35q4-2 7 0t7 0 7 0 7 0M18 51l-6-2M18 55h-7M18 59l-6 2M82 51l6-2M82 55h7M82 59l6 2"/></symbol>
+    <symbol id="ov-manchas" viewBox="0 0 100 120" fill="currentColor" stroke="none"><circle cx="31" cy="67" r="2.2"/><circle cx="36" cy="72" r="1.4"/><circle cx="28" cy="74" r="1.6"/><circle cx="68" cy="66" r="1.8"/><circle cx="73" cy="72" r="2.4"/><circle cx="64" cy="73" r="1.2"/><circle cx="58" cy="30" r="1.5"/><circle cx="42" cy="26" r="1.2"/></symbol>
+    <symbol id="ov-volume" viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"><path d="M26 72q4-9 14-9M74 72q-4-9-14-9M30 66l-2-6 6 0M70 66l2-6-6 0"/><path d="M40 86q10-8 20 0" stroke-dasharray="2 2"/></symbol>
+    <symbol id="ov-qualidade" viewBox="0 0 100 120" fill="currentColor" stroke="none"><path d="M76 24l1.6 4.4 4.4 1.6-4.4 1.6L76 36l-1.6-4.4-4.4-1.6 4.4-1.6Z"/><path d="M24 64l1.2 3.3 3.3 1.2-3.3 1.2L24 73l-1.2-3.3-3.3-1.2 3.3-1.2Z"/><path d="M70 72l1 2.6 2.6 1-2.6 1-1 2.6-1-2.6-2.6-1 2.6-1Z"/><path d="M38 20l.9 2.4 2.4.9-2.4.9-.9 2.4-.9-2.4-2.4-.9 2.4-.9Z"/></symbol>
+    <symbol id="ov-olheiras" viewBox="0 0 100 120" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"><path d="M30 61q7 5 14 0M56 61q7 5 14 0"/><ellipse cx="37" cy="63" rx="8" ry="3" fill="currentColor" opacity=".18" stroke="none"/><ellipse cx="63" cy="63" rx="8" ry="3" fill="currentColor" opacity=".18" stroke="none"/></symbol>
+    <symbol id="i-syringe" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="m15 3 6 6M18 6l-9.5 9.5-3.5 1 1-3.5L15.5 3.5M9 12l3 3M3 21l2.5-2.5"/></symbol>
+    <symbol id="i-drop" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3s6.5 7 6.5 11.5a6.5 6.5 0 0 1-13 0C5.5 10 12 3 12 3Z"/><path d="M9 15a3 3 0 0 0 3 3" stroke-linecap="round"/></symbol>
+    <symbol id="i-spark" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"><path d="M12 3l2.2 6.3L20.5 12l-6.3 2.7L12 21l-2.2-6.3L3.5 12l6.3-2.7Z"/></symbol>
+    <symbol id="i-laser" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20 13 11M13 11l1.5-5.5L19 10l-6 1M17 15l2 1M15 18l1 2M19 13h2"/></symbol>
+    <symbol id="i-roller" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M4 20l7-7"/><rect x="11" y="6" width="9" height="5" rx="2.5" transform="rotate(-45 15.5 8.5)"/><path d="M12 4.5l-1-1M20.5 13l1 1M14.5 3l-.5-1.5"/></symbol>
+    <symbol id="i-thread" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 18c4-9 7 4 11-4s5-10 7-10"/><path d="M6 14l1.5 1M10 12l1.5-1M15 9l1.5 1"/></symbol>
+    <symbol id="i-wave" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M3 9c2-3 4-3 6 0s4 3 6 0 4-3 6 0M3 15c2-3 4-3 6 0s4 3 6 0 4-3 6 0"/></symbol>
+    <symbol id="i-scan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 8V6a2 2 0 0 1 2-2h2M16 4h2a2 2 0 0 1 2 2v2M20 16v2a2 2 0 0 1-2 2h-2M8 20H6a2 2 0 0 1-2-2v-2"/><path d="M12 7.5c-2.2 0-3.5 1.6-3.5 3.8 0 2.6 1.9 5.2 3.5 5.2s3.5-2.6 3.5-5.2c0-2.2-1.3-3.8-3.5-3.8Z"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="11" cy="11" r="6.5"/><path d="m16 16 4.5 4.5"/></symbol>
+  </defs>
+</svg>
+
+<!-- ============ BLACK FRIDAY BAR ============ -->
+<div class="bf-bar">
+  <div class="wrap">
+    <span class="bf-pill">BLACK FRIDAY</span>
+    <span><strong data-cfg="discount">-20%</strong> na criação da app da sua clínica</span>
+    <span>Termina em <span class="bf-timer" id="barTimer">--</span></span>
+    <a href="#oferta">Garantir vaga</a>
+  </div>
+</div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <div class="wrap">
+    <a href="#" class="logo" aria-label="Wave Agency"><b>wave<i>.</i></b><span>AGENCY</span></a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#porque">O problema</a>
+      <a href="#oportunidade">A oportunidade</a>
+      <a href="#app">A app</a>
+      <a href="#contas">Faça as contas</a>
+      <a href="#faq">Perguntas</a>
+    </nav>
+    <a href="#oferta" class="btn btn-ghost">Fale connosco <svg><use href="#i-arrow"/></svg></a>
+    <button class="menu-btn" id="menuBtn" aria-label="Abrir menu"><span></span><span></span></button>
+  </div>
+</header>
+
+<!-- ============ 1. HERO ============ -->
+<section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <svg class="silk" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+    <defs>
+      <linearGradient id="gs" x1="0" x2="1"><stop offset="0" stop-color="#c9a46a" stop-opacity="0"/><stop offset=".5" stop-color="#e8cc97"/><stop offset="1" stop-color="#c9a46a" stop-opacity="0"/></linearGradient>
+    </defs>
+    <path class="s1" d="M700 900C900 650 1100 500 1500 120" stroke="url(#gs)" stroke-width="1.4"/>
+    <path class="s2" d="M820 920C1000 700 1200 560 1520 300" stroke="url(#gs)" stroke-width=".8"/>
+    <path class="s3" d="M600 -40C800 140 1100 160 1480 40" stroke="url(#gs)" stroke-width=".7"/>
+  </svg>
+  <canvas id="particles"></canvas>
+
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow fade-up">O mar azul da estética em Portugal</span>
+      <h1>
+        <span class="line"><span class="muted-strike">Todas as clínicas de estética têm um site.</span></span>
+        <span class="line"><span>Nenhuma tem <em class="gold">uma app.</em></span></span>
+      </h1>
+      <p class="lead fade-up" style="animation-delay:.5s">A próxima vantagem competitiva das clínicas não está no Instagram. Está no ecrã principal do telemóvel das suas clientes, e esse lugar ainda está livre. Criamos a app da sua clínica para que ela volte mais vezes, marque sozinha e não troque de clínica.</p>
+      <div class="hero-ctas fade-up" style="animation-delay:.65s">
+        <a href="#oferta" class="btn btn-gold btn-lg">Quero a app da minha clínica agora <svg><use href="#i-arrow"/></svg></a>
+        <a href="#app" class="btn btn-ghost btn-lg"><svg><use href="#i-play"/></svg> Experimentar a app</a>
+      </div>
+      <div class="hero-note fade-up" style="animation-delay:.8s"><span class="dot"></span> Black Friday: <b style="color:var(--gold-l)">&nbsp;<span data-cfg="spotsLeft">4</span> vagas</b>&nbsp;para as primeiras clínicas</div>
+    </div>
+
+    <div class="scene fade-up" id="scene" style="animation-delay:.3s">
+      <div class="stage" id="stage">
+        <div class="tag tag-site"><s>O site que todas têm</s></div>
+        <div class="browser" id="browser">
+          <div class="bar"><i></i><i></i><i></i><u></u></div>
+          <div class="page">
+            <div class="bl" style="width:30%"></div>
+            <h4>Clínica de Estética</h4>
+            <div class="bl" style="width:80%"></div>
+            <div class="bl" style="width:65%"></div>
+            <div class="row"><div></div><div></div><div></div></div>
+          </div>
+        </div>
+        <div class="hero-phone-pos">
+          <div class="float">
+            <div class="glow"></div>
+            <div class="phone">
+              <div class="screen">
+                <div class="status"><span>9:41</span><span>●●● ▮</span></div>
+                <div class="app-screen active">
+                  <div class="brand"><svg><use href="#i-lotus"/></svg><div>Lumière Clinic</div></div>
+                  <div class="a-h">Olá, Ana.</div>
+                  <div class="a-sub">O seu plano de cuidados</div>
+                  <div class="a-card gold"><svg class="ico"><use href="#i-cal"/></svg><div><small>Próxima marcação</small><b>Harmonização facial</b><small>Ter, 18 Nov · 10:30</small></div><svg class="chev"><use href="#i-chev"/></svg></div>
+                  <div class="a-grid">
+                    <div><svg><use href="#i-lotus"/></svg>Tratamentos</div>
+                    <div><svg><use href="#i-layers"/></svg>Planos</div>
+                    <div><svg><use href="#i-gift"/></svg>Benefícios</div>
+                  </div>
+                  <div class="a-card dark"><div><b>Plano Lumière Premium</b><small>4 de 6 sessões concluídas</small><div class="progress" style="width:170px"><i></i></div></div><svg class="chev"><use href="#i-chev"/></svg></div>
+                </div>
+                <div class="tabbar">
+                  <span class="on"><svg><use href="#i-home"/></svg>Início</span>
+                  <span><svg><use href="#i-cal"/></svg>Marcações</span>
+                  <span><svg><use href="#i-gift"/></svg>Pontos</span>
+                  <span><svg><use href="#i-user"/></svg>Perfil</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="tag tag-app">✦ A app que só a sua terá</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="strip" aria-hidden="true">
+  <div class="marquee">
+    <span>Mais clientes que voltam</span><span>Agenda cheia 24 h</span><span>Planos levados até ao fim</span><span>Preços e ofertas à vista</span><span>Ligação à sua agenda</span><span>Um canal só seu</span><span>Com a identidade da sua marca</span>
+    <span>Mais clientes que voltam</span><span>Agenda cheia 24 h</span><span>Planos levados até ao fim</span><span>Preços e ofertas à vista</span><span>Ligação à sua agenda</span><span>Um canal só seu</span><span>Com a identidade da sua marca</span>
+  </div>
+</div>
+
+<!-- ============ 2. O PROBLEMA ============ -->
+<section class="sec light" id="porque">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow dark">O problema</span>
+      <h2>Conquistar uma cliente custa caro.<br>Perdê-la <em class="gold">não custa nada.</em></h2>
+      <p class="intro">A sua clínica investe em anúncios, em equipamento e em formação para trazer cada cliente até à porta. Depois, ela faz o tratamento, gosta do resultado… e não volta. Não por falta de qualidade, mas porque ninguém a fez voltar.</p>
+    </div>
+    <div class="pain">
+      <div class="pain-c reveal"><span class="n">01</span><h3>Clientes que não voltam</h3><p>Fez o tratamento e desapareceu. Ninguém a lembrou de que estava na altura de repetir.</p></div>
+      <div class="pain-c reveal d1"><span class="n">02</span><h3>Agenda presa ao WhatsApp</h3><p>Marcações dispersas entre chamadas, DMs e mensagens às 23h. A receção passa o dia a responder em vez de atender.</p></div>
+      <div class="pain-c reveal d2"><span class="n">03</span><h3>Planos abandonados a meio</h3><p>Sem acompanhamento, a cliente perde o fio ao plano e desiste antes de ver o resultado completo.</p></div>
+      <div class="pain-c reveal d3"><span class="n">04</span><h3>Refém do algoritmo</h3><p>Cada campanha custa mais e chega a menos gente. Para falar com as suas próprias clientes, paga ao Instagram.</p></div>
+    </div>
+    <div class="pain-out reveal">
+      <div class="big">O problema não está em atrair. Está em <em>manter.</em></div>
+      <p>Falta à sua clínica um canal que a mantenha presente entre uma visita e a seguinte, um canal que seja seu e não do algoritmo. Esse canal já existe, e ainda quase ninguém o usa.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 2B. A OPORTUNIDADE (mar azul) ============ -->
+<section class="sec ocean" id="oportunidade">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">A oportunidade</span>
+      <h2>A próxima vantagem das clínicas de estética ainda <em class="gold">está por ocupar.</em></h2>
+      <p class="intro">As suas clientes usam apps para o banco, para o ginásio, para o restaurante preferido. Mas quando pensam na clínica onde cuidam de si, abrem o WhatsApp. Esse lugar no telemóvel está vazio e não vai ficar assim por muito tempo.</p>
+    </div>
+    <div class="seas">
+      <div class="sea sea-red reveal"><span class="k">Mar vermelho · onde todas estão</span><h3>Competir por atenção e por preço.</h3><ul><li>O mesmo site, o mesmo Instagram, as mesmas promoções</li><li>Cada cliente nova custa mais em anúncios</li><li>A cliente compara preços e escolhe a mais barata</li></ul></div>
+      <div class="sea sea-blue reveal d1"><span class="k">Mar azul · onde quase ninguém chegou</span><h3>Ter a sua própria app.</h3><ul><li>Uma experiência que a concorrência não oferece</li><li>Um canal direto, sem pagar por alcance</li><li>A cliente fica ligada a si, e não ao preço</li></ul></div>
+    </div>
+    <div class="why">
+      <div class="reveal"><span class="n">01</span><h3>Hoje é diferencial. Amanhã será o mínimo.</h3><p>Ainda são raras as clínicas de estética com app própria. Quem lançar agora destaca-se. Quem esperar vai apenas acompanhar os outros.</p></div>
+      <div class="reveal d1"><span class="n">02</span><h3>O ecrã principal só tem lugar para uma.</h3><p>Ninguém instala a app de três clínicas de estética. A cliente instala a da primeira que lhe der uma boa razão para isso.</p></div>
+      <div class="reveal d2"><span class="n">03</span><h3>Quem chega primeiro, fica.</h3><p>Pontos acumulados, plano em curso, histórico de tratamentos: tudo vive na sua app. Mudar de clínica passa a ter um custo para a cliente.</p></div>
+    </div>
+    <p class="quote reveal"><small>A regra do mar azul</small>Quem chega primeiro <em class="gold">bebe água limpa.</em></p>
+  </div>
+</section>
+
+<!-- ============ 3. A APP (scroll story) ============ -->
+<section class="sec show" id="app">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">A solução</span>
+      <h2>Imagine a sua clínica no telemóvel de <em class="gold">cada cliente.</em></h2>
+    </div>
+    <div class="show-grid">
+      <div class="steps" id="steps">
+        <article class="step active" data-screen="0">
+          <span class="num">01</span>
+          <h3>Área exclusiva do cliente</h3>
+          <p>A sua cliente abre a app e vê-se a si própria: o plano em curso, a próxima visita e ofertas pensadas para ela. Sente-se exclusiva, e quem se sente exclusiva volta.</p>
+          <span class="pill">✦ Experiência premium desde o primeiro toque</span>
+        </article>
+        <article class="step" data-screen="1">
+          <span class="num">02</span>
+          <h3>Encontre o seu problema</h3>
+          <p>A maioria das clientes não sabe o nome do tratamento de que precisa, mas sabe o que a incomoda. Toca em “rugas” ou “flacidez” e a app guia-a a partir daí.</p>
+          <span class="pill">✦ Pensado para quem ainda não sabe o que procura</span>
+        </article>
+        <article class="step" data-screen="2">
+          <span class="num">03</span>
+          <h3>Da dúvida ao pedido de avaliação</h3>
+          <p>Uma explicação clara, os tratamentos indicados e um botão direto para marcar. A dúvida que antes ficava num DM sem resposta passa a ser um pedido de avaliação.</p>
+          <span class="pill">✦ Cada visita à app pode acabar numa marcação</span>
+        </article>
+        <article class="step" data-screen="3">
+          <span class="num">04</span>
+          <h3>Todos os tratamentos, com preço</h3>
+          <p>O catálogo completo com valores e descontos exclusivos para membros, visível no momento em que a cliente decide. Acabou o “quanto custa?” por mensagem.</p>
+          <span class="pill">✦ Preços e ofertas à vista</span>
+        </article>
+        <article class="step" data-screen="4">
+          <span class="num">05</span>
+          <h3>Marcação em três toques</h3>
+          <p>Tratamento, dia, horário e confirmar, a qualquer hora e sem ocupar a receção. Se a clínica já usa um software de agenda, ligamos a app a ele.</p>
+          <span class="pill">✦ Disponível 24 horas por dia</span>
+        </article>
+        <article class="step" data-screen="5">
+          <span class="num">06</span>
+          <h3>Planos levados até ao fim</h3>
+          <p>A cliente vê o progresso sessão a sessão e recebe lembretes da próxima. Um plano de seis sessões deixa de ficar pela terceira.</p>
+          <span class="pill">✦ Mais tratamentos concluídos, mais resultados</span>
+        </article>
+        <article class="step" data-screen="6">
+          <span class="num">07</span>
+          <h3>Cartão de membro e pontos</h3>
+          <p>Um cartão Gold no telemóvel, com pontos e benefícios. Cada visita aproxima a cliente da próxima recompensa, e da sua clínica em vez da concorrência.</p>
+          <span class="pill">✦ A cliente fica ligada a si, não ao preço</span>
+        </article>
+        <article class="step" data-screen="7">
+          <span class="num">08</span>
+          <h3>Um canal direto, sem algoritmo</h3>
+          <p>Lembretes de manutenção, novidades e campanhas, como a sua própria Black Friday, chegam ao ecrã das clientes. Sem pagar por alcance.</p>
+          <span class="pill">✦ As suas clientes, o seu canal</span>
+        </article>
+      </div>
+
+      <div class="sticky-phone">
+        <div class="sp-halo"></div>
+        <div class="sp-orbit"></div>
+        <div class="sp-inner" id="spInner">
+          <div class="phone">
+            <div class="screen" id="showScreen">
+              <div class="status"><span>9:41</span><span>●●● ▮</span></div>
+
+              <!-- 0 Início -->
+              <div class="app-screen active">
+                <div class="x-top"><span class="lg"><svg><use href="#i-lotus"/></svg>Lumière</span><span class="x-av">A</span></div>
+                <div class="x-h" style="margin-top:12px">Bom dia, <em>Ana.</em></div>
+                <div class="x-hero">
+                  <svg class="art" aria-hidden="true"><use href="#art-gold"/></svg>
+                  <span class="tagg">PLANO GLOW</span>
+                  <b>Sessão 4 de 6</b>
+                  <div class="progress"><i></i></div>
+                  <small style="margin-top:6px">Próxima · Ter, 18 Nov · 10:30</small>
+                </div>
+                <div class="x-quick">
+                  <button data-go="1"><i><svg><use href="#i-scan"/></svg></i>O meu<br>problema</button>
+                  <button data-go="3"><i><svg><use href="#i-lotus"/></svg></i>Trata-<br>mentos</button>
+                  <button data-go="4"><i><svg><use href="#i-cal"/></svg></i>Marcar</button>
+                  <button data-go="6"><i><svg><use href="#i-gem"/></svg></i>Cartão</button>
+                </div>
+                <div class="x-lbl" style="margin-top:14px">PARA SI</div>
+                <div class="x-for" style="margin-top:7px" data-go="3"><div class="th"><svg class="art" aria-hidden="true"><use href="#art-wine"/></svg></div><div><b>Skinbooster de inverno</b><small>-15% para membros Gold</small></div><svg class="chev"><use href="#i-chev"/></svg></div>
+                <div class="x-for" style="margin-top:7px" data-go="1"><div class="th t2" style="display:flex;align-items:center;justify-content:center"><svg style="width:34px;height:40px;color:#8a6234" viewBox="0 0 100 120"><use href="#face"/><use href="#ov-qualidade"/></svg></div><div><b>Diagnóstico de pele</b><small>Descubra o que a sua pele precisa</small></div><svg class="chev"><use href="#i-chev"/></svg></div>
+              </div>
+
+              <!-- 1 Problema -->
+              <div class="app-screen">
+                <div class="x-ey">DIAGNÓSTICO</div>
+                <div class="x-h">O que a <em>preocupa?</em></div>
+                <div class="x-grid" id="probGrid">
+                  <button class="x-tile t1" data-p="flacidez"><svg class="fa"><use href="#face"/><use href="#ov-flacidez"/></svg><b>Flacidez</b><small>ROSTO</small></button>
+                  <button class="x-tile t2" data-p="rugas"><svg class="fa"><use href="#face"/><use href="#ov-rugas"/></svg><b>Rugas</b><small>EXPRESSÃO</small><span class="x-tap"></span></button>
+                  <button class="x-tile t3" data-p="manchas"><svg class="fa"><use href="#face"/><use href="#ov-manchas"/></svg><b>Manchas</b><small>PIGMENTAÇÃO</small></button>
+                  <button class="x-tile t4" data-p="volume"><svg class="fa"><use href="#face"/><use href="#ov-volume"/></svg><b>Falta de volume</b><small>CONTORNO</small></button>
+                  <button class="x-tile t5" data-p="qualidade"><svg class="fa"><use href="#face"/><use href="#ov-qualidade"/></svg><b>Qualidade da pele</b><small>TEXTURA</small></button>
+                  <button class="x-tile t6" data-p="olheiras"><svg class="fa"><use href="#face"/><use href="#ov-olheiras"/></svg><b>Olheiras</b><small>OLHAR</small></button>
+                </div>
+              </div>
+
+              <!-- 2 Detalhe -->
+              <div class="app-screen">
+                <div class="x-dhead t2" id="dHead">
+                  <button class="x-back" data-go="1" aria-label="Voltar"><svg><use href="#i-chev"/></svg></button>
+                  <svg class="fa" viewBox="0 0 100 120"><use href="#face"/><use id="dOv" href="#ov-rugas"/><g class="vec" fill="none" stroke="#b8874a" stroke-width="1" stroke-linecap="round"><path d="M44 92 26 38"/><path d="M47 92 36 30"/><path d="M56 92 66 30"/><path d="M59 92 76 38"/></g></svg>
+                </div>
+                <div class="x-dt"><div class="x-h" id="dTitle">Rugas</div><span>Avaliação médica</span></div>
+                <p class="x-p" id="dText">Linhas que se tornam marcadas com o movimento repetido dos músculos e a perda de elasticidade da pele.</p>
+                <div class="x-lbl">TRATAMENTOS INDICADOS</div>
+                <div class="x-chips" id="dChips"><span>Toxina botulínica</span><span>Skinbooster</span><span>Peeling químico</span></div>
+                <button class="x-cta" data-go="4">Descubra o tratamento ideal <svg><use href="#i-arrow"/></svg></button>
+                <div class="x-note">Todos os tratamentos requerem avaliação prévia.</div>
+              </div>
+
+              <!-- 3 Serviços -->
+              <div class="app-screen">
+                <div class="x-ey">CATÁLOGO</div>
+                <div class="x-h">Os nossos <em>tratamentos</em></div>
+                <div class="x-search"><svg><use href="#i-search"/></svg>Pesquisar tratamento…</div>
+                <div class="x-cats" id="cats"><button class="on" data-c="all">Todos</button><button data-c="inj">Injetáveis</button><button data-c="pele">Pele</button><button data-c="laser">Laser</button><button data-c="lift">Lifting</button></div>
+                <div class="x-list" id="svcList">
+                  <button class="x-svc" data-c="inj"><div class="th"><svg class="art"><use href="#art-gold"/></svg><span class="hot">MAIS PROCURADO</span><svg class="ic"><use href="#i-syringe"/></svg></div><div class="bd"><b>Toxina botulínica</b><small>desde €250 <em class="mb">-15% membro</em></small></div></button>
+                  <button class="x-svc" data-c="inj"><div class="th"><svg class="art"><use href="#art-wine"/></svg><svg class="ic"><use href="#i-drop"/></svg></div><div class="bd"><b>Ácido hialurónico</b><small>desde €300 <em class="mb">-15% membro</em></small></div></button>
+                  <button class="x-svc" data-c="inj"><div class="th t4"><svg class="ic"><use href="#i-spark"/></svg></div><div class="bd"><b>Bioestimuladores</b><small>desde €350 <em class="mb">-15% membro</em></small></div></button>
+                  <button class="x-svc" data-c="pele"><div class="th"><svg class="art"><use href="#art-gold"/></svg><svg class="ic"><use href="#i-drop"/></svg></div><div class="bd"><b>Skinbooster</b><small>desde €180 <em class="mb">-15% membro</em></small></div></button>
+                  <button class="x-svc" data-c="pele"><div class="th t2"><svg class="ic"><use href="#i-roller"/></svg></div><div class="bd"><b>Microagulhamento</b><small>desde €120 <em class="mb">-15% membro</em></small></div></button>
+                  <button class="x-svc" data-c="pele"><div class="th"><svg class="art"><use href="#art-wine"/></svg><svg class="ic"><use href="#i-wave"/></svg></div><div class="bd"><b>Peeling químico</b><small>desde €90 <em class="mb">-15% membro</em></small></div></button>
+                  <button class="x-svc" data-c="laser"><div class="th t6"><svg class="ic"><use href="#i-laser"/></svg></div><div class="bd"><b>Laser fracionado</b><small>desde €150 <em class="mb">-15% membro</em></small></div></button>
+                  <button class="x-svc" data-c="laser"><div class="th"><svg class="art"><use href="#art-gold"/></svg><svg class="ic"><use href="#i-laser"/></svg></div><div class="bd"><b>Depilação laser</b><small>desde €45 <em class="mb">-15% membro</em></small></div></button>
+                  <button class="x-svc" data-c="lift"><div class="th"><svg class="art"><use href="#art-wine"/></svg><svg class="ic"><use href="#i-thread"/></svg></div><div class="bd"><b>Fios de sustentação</b><small>desde €450 <em class="mb">-15% membro</em></small></div></button>
+                  <button class="x-svc" data-c="lift"><div class="th t1"><svg class="ic"><use href="#i-wave"/></svg></div><div class="bd"><b>Radiofrequência</b><small>desde €80 <em class="mb">-15% membro</em></small></div></button>
+                </div>
+              </div>
+
+              <!-- 4 Marcações -->
+              <div class="app-screen">
+                <div class="x-ey">NOVA MARCAÇÃO</div>
+                <div class="x-h" id="bookTitle">Avaliação <em>facial</em></div>
+                <div class="a-sub" id="bookSub" style="margin-top:4px">Consulta com a equipa médica · 30 min</div>
+                <div class="lbl">Novembro</div>
+                <div class="days">
+                  <div><small>Seg</small><b>17</b></div>
+                  <div class="on"><small>Ter</small><b>18</b></div>
+                  <div><small>Qua</small><b>19</b></div>
+                  <div><small>Qui</small><b>20</b></div>
+                  <div><small>Sex</small><b>21</b></div>
+                </div>
+                <div class="lbl">Horários disponíveis</div>
+                <div class="slots" id="slots">
+                  <div class="off">09:00</div><div class="on">10:30</div><div>11:30</div>
+                  <div>14:00</div><div class="off">15:00</div><div>16:30</div>
+                </div>
+                <button class="x-cta" id="bookBtn">Confirmar pedido · 10:30</button>
+              </div>
+
+              <!-- 5 Planos -->
+              <div class="app-screen">
+                <div class="x-ey">PLANO ATIVO</div>
+                <div class="x-h">Rejuvenescimento <em>facial</em></div>
+                <div class="progress"><i></i></div>
+                <div class="a-sub" style="margin-top:6px">4 de 6 sessões concluídas</div>
+                <div class="tl">
+                  <div class="done">Sessão 3 · Microagulhamento<small>21 Out · concluída</small></div>
+                  <div class="done">Sessão 4 · Radiofrequência<small>04 Nov · concluída</small></div>
+                  <div>Sessão 5 · Microagulhamento<small>18 Nov · 10:30</small></div>
+                  <div>Sessão 6 · Avaliação final<small>A marcar</small></div>
+                </div>
+              </div>
+
+              <!-- 6 Cartão membro -->
+              <div class="app-screen x-member">
+                <div class="x-ey">CARTÃO DE MEMBRO</div>
+                <div class="gcard">
+                  <svg class="art" aria-hidden="true"><use href="#art-gold"/></svg>
+                  <div class="g1"><span>LUMIÈRE CLINIC</span><svg><use href="#i-lotus"/></svg></div>
+                  <div class="chipc"></div>
+                  <div class="g2"><div><small>MEMBRO</small><b>Ana Ribeiro</b></div><span>GOLD<br>2026</span></div>
+                </div>
+                <div class="pts"><b>1.250<small>pts</small></b><span>Faltam 250 para<br>Platinum</span></div>
+                <div class="progress"><i style="width:83%"></i></div>
+                <div class="perks"><div><b>-15%</b>em skinbooster</div><div><b>LED</b>sessão de oferta</div></div>
+              </div>
+
+              <!-- 7 Comunicação -->
+              <div class="app-screen">
+                <div class="lock-time">9:41</div>
+                <div class="lock-date">Quarta-feira, 26 de novembro</div>
+                <div class="notif hl"><div class="ap"><svg><use href="#i-lotus"/></svg></div><div><small>agora</small><b>Black Friday Lumière ✦</b>Só para clientes da app: -25% em tratamentos de pele até domingo.</div></div>
+                <div class="notif"><div class="ap"><svg><use href="#i-bell"/></svg></div><div><small>1 h</small><b>Lembrete</b>A sua sessão é amanhã às 10:30.</div></div>
+                <div class="notif"><div class="ap"><svg><use href="#i-gift"/></svg></div><div><small>ontem</small><b>Ganhou 150 pontos</b>Obrigada pela sua visita, Ana.</div></div>
+              </div>
+
+              <div class="tabbar">
+                <span class="on" data-tab="0" data-go="0"><svg><use href="#i-home"/></svg>Início</span>
+                <span data-tab="1" data-go="1"><svg><use href="#i-scan"/></svg>Problema</span>
+                <span data-tab="3" data-go="3"><svg><use href="#i-lotus"/></svg>Tratamentos</span>
+                <span data-tab="6" data-go="6"><svg><use href="#i-gem"/></svg>Cartão</span>
+              </div>
+            </div>
+          </div>
+          <div class="dots" id="dots"><i class="on"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+          <div class="try"><i></i>Experimente: toque no ecrã</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4. GARGALOS RESOLVIDOS ============ -->
+<section class="sec light" id="resultados">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow dark">O que muda na sua clínica</span>
+      <h2>Cada gargalo da sua clínica, <em class="gold">resolvido dentro da app.</em></h2>
+      <p class="intro">Não é uma app bonita só por ser bonita. Cada ecrã existe para resolver um problema concreto do dia a dia da clínica e para trazer mais faturação.</p>
+    </div>
+    <div class="fix">
+      <div class="fx fx-hl tilt reveal"><span class="from"><s>A cliente não volta</s></span><svg class="arrow"><use href="#i-arrow"/></svg><h3>Lembretes de manutenção automáticos</h3><p>A app avisa a cliente quando está na altura de repetir: a toxina ao fim de alguns meses, a limpeza de pele ao fim do mês. Ela volta sem a sua equipa ter de ligar.</p><span class="fx-tag"><svg><use href="#i-heart"/></svg>Mais retorno</span></div>
+      <div class="fx tilt reveal d1"><span class="from"><s>Visitas espaçadas</s></span><svg class="arrow"><use href="#i-arrow"/></svg><h3>Planos, pacotes e pontos</h3><p>Cada visita aproxima a cliente da próxima recompensa. Um plano com progresso visível transforma uma sessão num compromisso de seis.</p><span class="fx-tag"><svg><use href="#i-layers"/></svg>Mais frequência</span></div>
+      <div class="fx tilt reveal d2"><span class="from"><s>Agenda caótica</s></span><svg class="arrow"><use href="#i-arrow"/></svg><h3>Marcação em três toques, 24 horas por dia</h3><p>A cliente escolhe o tratamento, o dia e o horário, mesmo às 23h, sem ocupar a receção. Os lembretes automáticos reduzem as faltas.</p><span class="fx-tag"><svg><use href="#i-cal"/></svg>Agenda cheia e organizada</span></div>
+      <div class="fx tilt reveal"><span class="from"><s>Pacientes dispersos</s></span><svg class="arrow"><use href="#i-arrow"/></svg><h3>Ligação ao seu sistema de agenda</h3><p>Sempre que o software de agenda que já utiliza o permita, ligamos a app a ele. Marcações, histórico e planos ficam num só lugar, sob o seu controlo.</p><span class="fx-tag"><svg><use href="#i-layers"/></svg>Gestão sem esforço</span></div>
+      <div class="fx tilt reveal d1"><span class="from"><s>“Quanto custa?”</s></span><svg class="arrow"><use href="#i-arrow"/></svg><h3>Preços e ofertas à vista</h3><p>Tratamentos, valores e descontos exclusivos para membros, apresentados no momento em que a cliente decide. Menos perguntas por mensagem, mais marcações.</p><span class="fx-tag"><svg><use href="#i-euro"/></svg>Mais conversão</span></div>
+      <div class="fx tilt reveal d2"><span class="from"><s>Refém do algoritmo</s></span><svg class="arrow"><use href="#i-arrow"/></svg><h3>Um canal só seu</h3><p>Uma notificação chega ao ecrã da cliente sem pagar por alcance. Campanhas, novidades e a sua Black Friday chegam diretamente a quem já confia em si.</p><span class="fx-tag"><svg><use href="#i-bell"/></svg>Mais faturação por campanha</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 4B. FAÇA AS CONTAS ============ -->
+<section class="sec calc-sec" id="contas">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Faça as contas</span>
+      <h2>Quanto vale uma cliente <em class="gold">que volta mais uma vez?</em></h2>
+      <p class="intro" style="color:rgba(246,240,231,.75)">Mova os valores para a realidade da sua clínica e veja o que representa trazer as suas clientes de volta mais vezes por ano.</p>
+    </div>
+    <div class="calc reveal">
+      <div class="calc-in">
+        <div class="fld"><label for="cA">Clientes ativas na clínica <output id="oA">300</output></label><input type="range" id="cA" min="50" max="2000" step="10" value="300"><small>Clientes que visitaram a clínica no último ano</small></div>
+        <div class="fld"><label for="cB">Valor médio por visita <output id="oB">€120</output></label><input type="range" id="cB" min="30" max="600" step="5" value="120"></div>
+        <div class="fld"><label for="cC">Clientes que usam a app <output id="oC">40%</output></label><input type="range" id="cC" min="10" max="80" step="5" value="40"><small>Percentagem das suas clientes que instalam a app</small></div>
+        <div class="fld"><label for="cD">Visitas extra por ano, por cliente <output id="oD">1</output></label><input type="range" id="cD" min="0.5" max="4" step="0.5" value="1"><small>Graças aos lembretes, planos e pontos</small></div>
+      </div>
+      <div class="calc-out">
+        <span class="k">Faturação adicional estimada</span>
+        <div class="res" id="cRes">€14.400</div>
+        <div class="per">por ano, só com as clientes que já tem</div>
+        <div class="split"><div><b id="cVis">120</b><span>visitas extra por ano</span></div><div><b id="cMon">€1.200</b><span>a mais, em média, por mês</span></div></div>
+        <a href="#" class="btn btn-gold btn-lg js-wa">Quero a app da minha clínica agora <svg><use href="#i-arrow"/></svg></a>
+        <p class="calc-note">Simulação ilustrativa com os valores que introduzir. Não é uma garantia: os resultados dependem de cada clínica.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5. PROCESSO ============ -->
+<section class="sec process" id="processo">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow dark">Processo</span>
+      <h2>Da primeira conversa à app no telemóvel das suas clientes. <em class="gold">Sem complicações para si.</em></h2>
+    </div>
+    <div class="timeline" id="timeline">
+      <i class="bar"></i>
+      <div class="t-step reveal"><div class="n">1</div><h3>Reunião de diagnóstico</h3><p>Analisamos a clínica, os gargalos e o software de agenda que já utiliza. Definimos as funcionalidades que mais faturação lhe vão trazer.</p></div>
+      <div class="t-step reveal d1"><div class="n">2</div><h3>Design com a sua identidade</h3><p>Cores, tipografia e tom da sua marca aplicados a cada ecrã. Aprova antes de avançarmos.</p></div>
+      <div class="t-step reveal d2"><div class="n">3</div><h3>Desenvolvimento e testes</h3><p>Construímos a app com os seus tratamentos, preços e ofertas reais, ligamo-la à sua agenda sempre que possível e testamos em iPhone e Android.</p></div>
+      <div class="t-step reveal d3"><div class="n">4</div><h3>Lançamento</h3><p>Entregamos QR codes para a receção e conteúdos para as redes sociais, para as suas clientes instalarem a app num toque desde o primeiro dia.</p></div>
+    </div>
+    <div class="pwa-note reveal">
+      <div class="qr" id="qr" aria-hidden="true"></div>
+      <p><b>Sem App Store, sem complicações.</b> A app da sua clínica instala-se diretamente a partir de um link ou de um QR code e fica no ecrã principal, como qualquer outra app. Funciona em iPhone e Android.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6. SOLUÇÕES (percurso da cliente) ============ -->
+<section class="sec light" id="solucoes">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow dark">As nossas soluções</span>
+      <h2>Atrair, converter e <em class="gold">fidelizar.</em></h2>
+      <p class="intro">Acompanhamos a cliente em todo o percurso: desde o anúncio que a faz descobrir a sua clínica até à app que a faz voltar.</p>
+    </div>
+
+    <div class="journey">
+      <div class="j-line" aria-hidden="true">
+        <svg viewBox="0 0 1000 40" preserveAspectRatio="none"><path id="jpath" d="M0 20 C 250 -10, 350 50, 500 20 S 800 -10, 1000 20"/><circle class="runner" r="5"><animateMotion dur="7s" repeatCount="indefinite"><mpath href="#jpath"/></animateMotion></circle></svg>
+      </div>
+
+      <article class="jc jc-ads tilt reveal">
+        <div class="jc-vis">
+          <div class="dev d-story"><div class="phone"><div class="screen">
+            <svg class="art" aria-hidden="true"><use href="#art-wine"/></svg>
+            <div class="status" style="position:relative;z-index:2"><span>9:41</span><span>●●● ▮</span></div>
+            <div class="story">
+              <div class="bars"><i></i><i></i><i></i></div>
+              <div class="who"><i></i><div>lumiere.clinic<small>Patrocinado</small></div></div>
+              <div class="copy"><span>NOVO · LASER CORPORAL</span><h6>O seu corpo, <em>redesenhado.</em></h6><p>Avaliação personalizada com a nossa equipa médica.</p></div>
+              <div class="cta"><svg><use href="#i-chev"/></svg><b>Marcar avaliação</b></div>
+            </div>
+          </div></div></div>
+          <div class="glass" style="left:16px;top:22px"><small>Campanha · Stories &amp; Reels</small><b>Lisboa · 25–55 anos</b><div class="meter"><i></i><i></i><i></i><i></i><i></i><i></i></div></div>
+          <div class="glass light" style="right:16px;bottom:24px;animation-delay:-2s"><div class="row"><span class="ic"><svg><use href="#i-cal"/></svg></span><div><b>Novo pedido</b><small>Avaliação · Laser corporal</small></div></div></div>
+        </div>
+        <div class="jc-body">
+          <span class="jc-step">01 <b>Atrair · Publicidade</b></span>
+          <h3>Novas clientes a descobrir a sua clínica.</h3>
+          <p>Campanhas no Instagram e Facebook dirigidas ao público certo, na sua zona, com criativos à altura da sua marca.</p>
+          <ul class="jc-tags"><li>Meta Ads</li><li>Criativos</li><li>Segmentação local</li></ul>
+        </div>
+      </article>
+
+      <article class="jc jc-site tilt reveal d1">
+        <div class="jc-vis">
+          <div class="lap">
+            <div class="lap-scr">
+              <div class="ws">
+                <div class="ws-l">
+                  <div class="ws-nav"><b>Lumière</b><span>Tratamentos</span><span>Clínica</span><u>Marcar</u></div>
+                  <div class="ws-k">ESTÉTICA AVANÇADA</div>
+                  <h5>Estética de <em>elevada precisão.</em></h5>
+                  <p>Tratamentos personalizados, tecnologia de última geração e acompanhamento especializado.</p>
+                  <span class="bt">Marcar avaliação →</span>
+                </div>
+                <div class="ws-r"><div class="ws-arch"><svg class="art" aria-hidden="true"><use href="#art-gold"/></svg></div></div>
+              </div>
+              <div class="ws-strip"><span>FACIAL</span><span>CORPORAL</span><span>LASER</span><span>BEM-ESTAR</span></div>
+            </div>
+            <div class="lap-base"></div>
+          </div>
+          <div class="dev d-msite"><div class="phone"><div class="screen">
+            <div class="ms">
+              <div class="ws-nav"><b>Lumière</b><u>Marcar</u></div>
+              <div class="ms-arch"><svg class="art" aria-hidden="true"><use href="#art-gold"/></svg></div>
+              <h5>Estética de <em>elevada precisão.</em></h5>
+              <span class="bt">Marcar avaliação →</span>
+            </div>
+          </div></div></div>
+        </div>
+        <div class="jc-body">
+          <span class="jc-step">02 <b>Converter · Website</b></span>
+          <h3>Um site que transforma visitas em marcações.</h3>
+          <p>Tratamentos, equipa e espaço apresentados com elegância, com o caminho certo até ao pedido de marcação.</p>
+          <ul class="jc-tags"><li>Design premium</li><li>Mobile first</li><li>SEO local</li></ul>
+        </div>
+      </article>
+
+      <article class="jc jc-app tilt reveal d2">
+        <span class="jc-badge">BLACK FRIDAY <span data-cfg="discount">-20%</span></span>
+        <div class="jc-vis">
+          <div class="dev d-splash"><div class="phone"><div class="screen">
+            <svg class="art" aria-hidden="true"><use href="#art-marble"/></svg>
+            <div class="splash"><div class="mono">L</div><h6>LUMIÈRE</h6><p>clinic &amp; aesthetics</p><div class="go">Entrar</div></div>
+          </div></div></div>
+          <div class="dev d-member"><div class="phone"><div class="screen">
+            <div class="status"><span>9:41</span><span>●●● ▮</span></div>
+            <div class="member">
+              <div class="top"><b>Olá, Ana.</b><i>A</i></div>
+              <div class="gcard">
+                <svg class="art" aria-hidden="true"><use href="#art-gold"/></svg>
+                <div class="g1"><span>LUMIÈRE CLINIC</span><svg><use href="#i-lotus"/></svg></div>
+                <div class="chipc"></div>
+                <div class="g2"><div><small>MEMBRO</small><b>Ana Ribeiro</b></div><span>GOLD<br>2026</span></div>
+              </div>
+              <div class="pts"><b>1.250<small>pts</small></b><span>Faltam 250 para<br>Platinum</span></div>
+              <div class="progress"><i></i></div>
+              <div class="perks"><div><b>-15%</b>em peeling químico</div><div><b>LED</b>sessão de oferta</div></div>
+              <div class="a-btn"><svg><use href="#i-layers"/></svg>Mostrar cartão na receção</div>
+            </div>
+            <div class="tabbar"><span><svg><use href="#i-home"/></svg>Início</span><span><svg><use href="#i-cal"/></svg>Marcações</span><span class="on"><svg><use href="#i-gem"/></svg>Membro</span><span><svg><use href="#i-user"/></svg>Perfil</span></div>
+          </div></div></div>
+          <div class="glass" style="left:14px;bottom:22px;animation-delay:-3s;max-width:205px"><div class="row"><span class="ic"><svg><use href="#i-lotus"/></svg></span><div><b>Lumière Clinic</b><small>Ganhou 150 pontos pela sua visita ✦</small></div></div></div>
+        </div>
+        <div class="jc-body">
+          <span class="jc-step">03 <b>Fidelizar · App</b></span>
+          <h3>A app que faz a cliente voltar.</h3>
+          <p>Marcações, pontos, planos de tratamento e campanhas diretas, com a identidade da sua clínica.</p>
+          <ul class="jc-tags"><li>Fidelização</li><li>Notificações</li><li>Área do cliente</li></ul>
+        </div>
+      </article>
+    </div>
+
+    <div class="sol-cta reveal">
+      <p>Comece pela app ou leve o percurso completo.<span>Desenhamos a combinação certa para a fase da sua clínica.</span></p>
+      <a href="#" class="btn btn-lg js-wa">Falar sobre a minha clínica <svg><use href="#i-arrow"/></svg></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 7. OFERTA BLACK FRIDAY ============ -->
+<section class="sec bf" id="oferta">
+  <div class="bf-big" aria-hidden="true">BLACK FRIDAY</div>
+  <div class="wrap bf-inner">
+    <div class="reveal">
+      <span class="eyebrow">Black Friday Wave</span>
+      <h2>Quem chega primeiro bebe água limpa. Seja a primeira da sua zona.</h2>
+      <div class="off" data-cfg="discount">-20%</div>
+      <p style="font-size:18px;opacity:.8;max-width:520px">na criação da app da sua clínica. Só para as primeiras clínicas a fechar projeto durante a Black Friday.</p>
+      <ul>
+        <li><svg><use href="#i-check"/></svg>App exclusiva com a identidade da sua clínica</li>
+        <li><svg><use href="#i-check"/></svg>Diagnóstico por problema, catálogo com preços e marcações</li>
+        <li><svg><use href="#i-check"/></svg>Cartão de membro, pontos, planos e notificações</li>
+        <li><svg><use href="#i-check"/></svg>Ligação ao seu sistema de agenda, sempre que possível</li>
+        <li><svg><use href="#i-check"/></svg>Vagas limitadas para garantir o nível de cada projeto</li>
+      </ul>
+    </div>
+    <div class="bf-card reveal d1">
+      <span class="k">A campanha termina em</span>
+      <div class="count" id="count">
+        <div><b data-u="d">00</b><small>dias</small></div>
+        <div><b data-u="h">00</b><small>horas</small></div>
+        <div><b data-u="m">00</b><small>min</small></div>
+        <div><b data-u="s">00</b><small>seg</small></div>
+      </div>
+      <a href="#" class="btn btn-gold btn-lg js-wa">Quero a app da minha clínica agora <svg><use href="#i-arrow"/></svg></a>
+      <div class="spots"><b data-cfg="spotsLeft">4</b> de <b data-cfg="spotsTotal">10</b> vagas ainda disponíveis</div>
+      <div class="spots-bar"><i id="spotsBar"></i></div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 8. FAQ ============ -->
+<section class="sec light" id="faq">
+  <div class="wrap">
+    <div class="sec-head reveal" style="text-align:center;margin-inline:auto">
+      <span class="eyebrow dark">Perguntas frequentes</span>
+      <h2>Tudo o que precisa de saber.</h2>
+    </div>
+    <div class="faq reveal">
+      <details open><summary>As minhas clientes precisam de ir à App Store? <i></i></summary><p>Não. A app instala-se a partir de um link ou de um QR code e fica no ecrã principal do telemóvel, com o ícone da sua clínica. Funciona em iPhone e Android.</p></details>
+      <details><summary>Funciona com o meu sistema de agenda? <i></i></summary><p>Na reunião de diagnóstico analisamos o software que já utiliza. Quando permite integração, ligamos a app diretamente a ele. Quando não permite, configuramos um fluxo de pedidos de marcação simples para a sua receção confirmar.</p></details>
+      <details><summary>As minhas clientes vão mesmo instalar a app? <i></i></summary><p>Instalam quando têm razões para isso: pontos, ofertas exclusivas e marcar sem esperar. Entregamos QR codes para a receção e conteúdos para as redes sociais, para que cada cliente a instale logo na visita.</p></details>
+      <details><summary>Quanto tempo demora a ter a minha app? <i></i></summary><p>Depende das funcionalidades que escolher. Na reunião de diagnóstico definimos o âmbito e damos-lhe um prazo concreto antes de começar.</p></details>
+      <details><summary>Quanto custa? <i></i></summary><p>Cada app é orçamentada à medida da sua clínica. Durante a Black Friday, os projetos fechados têm a condição especial indicada acima.</p></details>
+      <details><summary>Posso alterar tratamentos, preços e campanhas? <i></i></summary><p>Sim. Os conteúdos podem ser atualizados e oferecemos planos de manutenção e evolução para a app crescer com a sua clínica.</p></details>
+      <details><summary>E os dados das minhas clientes? <i></i></summary><p>A proteção de dados é tratada desde o início do projeto, de acordo com o RGPD. Explicamos tudo em detalhe na reunião.</p></details>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 9. CTA FINAL ============ -->
+<section class="sec final" id="contacto">
+  <div class="wrap">
+    <span class="eyebrow reveal">A decisão</span>
+    <h2 class="reveal">Um dia, todas as clínicas vão ter uma app.<br>A questão é <em class="gold">quem chega primeiro.</em></h2>
+    <p class="reveal d1">Em 20 minutos mostramos-lhe como ficaria a app da sua clínica, com a sua marca, os seus tratamentos e os seus preços. Sem compromisso.</p>
+    <div class="ctas reveal d2">
+      <a href="#" class="btn btn-gold btn-lg js-wa">Quero a app da minha clínica agora <svg><use href="#i-arrow"/></svg></a>
+      <a href="#" class="btn btn-ghost btn-lg js-mail">Enviar email</a>
+    </div>
+    <div class="mini-phones reveal d3" aria-hidden="true">
+      <div class="phone"><div class="screen"><div class="status"><span>9:41</span></div><div class="app-screen"><div class="mini">
+        <div class="a-h" style="font-size:26px">Os seus pontos</div>
+        <div class="ring"><svg viewBox="0 0 100 100"><circle cx="50" cy="50" r="44" stroke="rgba(255,255,255,.08)" stroke-width="6" fill="none"/><circle cx="50" cy="50" r="44" stroke="#c9a46a" stroke-width="6" fill="none" stroke-linecap="round" stroke-dasharray="276" stroke-dashoffset="70"/></svg><div class="v"><b>1.250</b><small>pontos</small></div></div>
+        <div class="reward"><span>Máscara LED</span><em>1.500</em></div>
+      </div></div></div></div>
+      <div class="phone"><div class="screen"><div class="status"><span>9:41</span></div><div class="app-screen"><div class="mini">
+        <div class="brand"><svg><use href="#i-lotus"/></svg><div>Lumière Clinic</div></div>
+        <div class="a-h">Olá, Ana.</div>
+        <div class="a-card gold"><svg class="ico"><use href="#i-cal"/></svg><div><small>Próxima marcação</small><b>Harmonização facial</b></div></div>
+        <div class="a-grid"><div><svg><use href="#i-lotus"/></svg>Tratamentos</div><div><svg><use href="#i-layers"/></svg>Planos</div><div><svg><use href="#i-gift"/></svg>Benefícios</div></div>
+      </div></div></div></div>
+      <div class="phone"><div class="screen"><div class="status"><span>9:41</span></div><div class="app-screen"><div class="mini">
+        <div class="a-h" style="font-size:26px">Tratamentos</div>
+        <div class="treat"><div class="th"></div><div><b>Hidrafacial</b></div><em>€90</em></div>
+        <div class="treat"><div class="th"></div><div><b>Peeling</b></div><em>€75</em></div>
+        <div class="treat"><div class="th"></div><div><b>Laser</b></div><em>€60</em></div>
+      </div></div></div></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <a href="#" class="logo"><b style="font-size:24px">wave<i>.</i></b><span>AGENCY</span></a>
+    <div class="links"><a href="#app">A app</a><a href="#processo">Processo</a><a href="#faq">FAQ</a><a href="#" class="js-mail">Contacto</a></div>
+    <span>© <span id="yr"></span> Wave Agency · Portugal</span>
+  </div>
+</footer>
+
+<a href="#" class="wa js-wa" id="waFloat" aria-label="Falar no WhatsApp"><svg><use href="#i-wa"/></svg></a>
+
+<script>
+/* =========================================================
+   CONFIGURAÇÃO — edite aqui
+   ========================================================= */
+const CONFIG = {
+  whatsapp: "351900000000",            // número com indicativo, sem + nem espaços
+  whatsappMsg: "Olá! Vi a campanha Black Friday e quero uma app para a minha clínica.",
+  email: "ola@waveagency.pt",
+  bfEnd: "2026-11-30T23:59:59Z",       // fim da campanha (Lisboa = UTC no inverno)
+  discount: "-20%",
+  spotsTotal: 10,
+  spotsLeft: 4
+};
+
+/* Apply config */
+document.querySelectorAll('[data-cfg]').forEach(el=>{el.textContent=CONFIG[el.dataset.cfg]});
+const waUrl=`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(CONFIG.whatsappMsg)}`;
+document.querySelectorAll('.js-wa').forEach(a=>{a.href=waUrl;a.target="_blank";a.rel="noopener"});
+document.querySelectorAll('.js-mail').forEach(a=>a.href=`mailto:${CONFIG.email}?subject=${encodeURIComponent("App para a minha clínica")}`);
+document.getElementById('yr').textContent=new Date().getFullYear();
+
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+/* Countdown */
+const end=new Date(CONFIG.bfEnd).getTime();
+const pad=n=>String(n).padStart(2,'0');
+const cEls={d:document.querySelector('[data-u=d]'),h:document.querySelector('[data-u=h]'),m:document.querySelector('[data-u=m]'),s:document.querySelector('[data-u=s]')};
+const barT=document.getElementById('barTimer');
+function tick(){
+  let t=Math.max(0,end-Date.now())/1000;
+  const d=Math.floor(t/86400),h=Math.floor(t%86400/3600),m=Math.floor(t%3600/60),s=Math.floor(t%60);
+  cEls.d.textContent=pad(d);cEls.h.textContent=pad(h);cEls.m.textContent=pad(m);cEls.s.textContent=pad(s);
+  barT.textContent=t>0?`${d}d ${pad(h)}h ${pad(m)}m ${pad(s)}s`:'campanha terminada';
+}
+tick();setInterval(tick,1000);
+
+/* Nav */
+const nav=document.getElementById('nav');
+const wa=document.getElementById('waFloat');
+addEventListener('scroll',()=>{
+  nav.classList.toggle('scrolled',scrollY>20);
+  wa.classList.toggle('show',scrollY>innerHeight*.8);
+},{passive:true});
+const menuBtn=document.getElementById('menuBtn'),navLinks=document.getElementById('navLinks');
+menuBtn.addEventListener('click',()=>navLinks.classList.toggle('open'));
+navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>navLinks.classList.remove('open')));
+
+/* Reveal on scroll */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
+document.querySelectorAll('.reveal,#timeline').forEach(el=>io.observe(el));
+const sb=document.getElementById('spotsBar');
+new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){sb.style.width=((CONFIG.spotsTotal-CONFIG.spotsLeft)/CONFIG.spotsTotal*100)+'%';o.disconnect()}})).observe(sb);
+
+/* Hero 3D: mouse + scroll */
+const stage=document.getElementById('stage'),scene=document.getElementById('scene'),browser=document.getElementById('browser');
+let mx=0,my=0;
+if(!reduce){
+  addEventListener('pointermove',e=>{
+    mx=(e.clientX/innerWidth-.5);my=(e.clientY/innerHeight-.5);
+    stage.style.setProperty('--ry',(-10+mx*18)+'deg');
+    stage.style.setProperty('--rx',(6-my*10)+'deg');
+  },{passive:true});
+  addEventListener('scroll',()=>{
+    const p=Math.min(1,scrollY/innerHeight);
+    stage.style.transform=`rotateX(${6-my*10+p*8}deg) rotateY(${-10+mx*18+p*14}deg) translateY(${p*40}px)`;
+  },{passive:true});
+}
+
+/* Showcase: steps drive the phone + the phone is interactive */
+const steps=[...document.querySelectorAll('.step')];
+const screens=[...document.querySelectorAll('#showScreen .app-screen')];
+const tabs=[...document.querySelectorAll('#showScreen .tabbar span')];
+const dots=[...document.querySelectorAll('#dots i')];
+const sp=document.getElementById('spInner');
+const tabFor={0:0,1:1,2:1,3:3,4:3,5:0,6:6,7:0};
+function showScreen(i){
+  screens.forEach((s,k)=>s.classList.toggle('active',k===i));
+  tabs.forEach(t=>t.classList.toggle('on',+t.dataset.tab===tabFor[i]));
+}
+function setScreen(i){
+  steps.forEach((s,k)=>s.classList.toggle('active',k===i));
+  dots.forEach((d,k)=>d.classList.toggle('on',k===i));
+  showScreen(i);
+  sp.style.setProperty('--sry',(i%2?8:-10)+'deg');
+}
+const isMob=matchMedia('(max-width:760px)').matches;
+const so=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)setScreen(+e.target.dataset.screen)}),{rootMargin:isMob?'-62% 0px -37% 0px':'-45% 0px -45% 0px'});
+steps.forEach(s=>so.observe(s));
+
+const PROB={
+  flacidez:{t:'Flacidez',c:'t1',x:'Com o tempo, a produção de colagénio diminui e a pele perde firmeza, sobretudo no contorno do rosto e no pescoço.',tr:['Bioestimuladores','Radiofrequência','Fios de sustentação']},
+  rugas:{t:'Rugas',c:'t2',x:'Linhas que se tornam marcadas com o movimento repetido dos músculos e a perda de elasticidade da pele.',tr:['Toxina botulínica','Skinbooster','Peeling químico']},
+  manchas:{t:'Manchas',c:'t3',x:'Alterações de pigmentação causadas pelo sol, pelas hormonas ou pela idade, que tornam o tom da pele irregular.',tr:['Peeling químico','Laser fracionado','Mesoterapia']},
+  volume:{t:'Falta de volume',c:'t4',x:'A perda natural de gordura e de estrutura deixa o rosto com um aspeto mais cansado e menos definido.',tr:['Ácido hialurónico','Bioestimuladores']},
+  qualidade:{t:'Qualidade da pele',c:'t5',x:'Poros dilatados, textura irregular e falta de luminosidade que tiram vida e brilho à pele.',tr:['Skinbooster','Microagulhamento','Peeling químico']},
+  olheiras:{t:'Olheiras',c:'t6',x:'Sombras sob os olhos, por genética, cansaço ou perda de volume, que dão um ar cansado ao olhar.',tr:['Ácido hialurónico','Skinbooster','Mesoterapia']}
+};
+const dHead=document.getElementById('dHead'),dOv=document.getElementById('dOv');
+function openProblem(k){
+  const p=PROB[k];
+  document.getElementById('dTitle').textContent=p.t;
+  document.getElementById('dText').textContent=p.x;
+  document.getElementById('dChips').innerHTML=p.tr.map(t=>`<span>${t}</span>`).join('');
+  dHead.className='x-dhead '+p.c;
+  dOv.setAttribute('href','#ov-'+k);
+  document.getElementById('bookTitle').innerHTML='Avaliação · <em>'+p.t.toLowerCase()+'</em>';
+  // restart line animation
+  screens[2].classList.remove('active');void screens[2].offsetWidth;
+  showScreen(2);
+}
+document.querySelectorAll('#probGrid .x-tile').forEach(b=>b.addEventListener('click',()=>openProblem(b.dataset.p)));
+document.querySelectorAll('#showScreen [data-go]').forEach(b=>b.addEventListener('click',e=>{e.stopPropagation();showScreen(+b.dataset.go)}));
+document.querySelectorAll('#cats button').forEach(b=>b.addEventListener('click',()=>{
+  document.querySelectorAll('#cats button').forEach(x=>x.classList.toggle('on',x===b));
+  document.querySelectorAll('#svcList .x-svc').forEach(s=>s.classList.toggle('hide',b.dataset.c!=='all'&&s.dataset.c!==b.dataset.c));
+}));
+document.querySelectorAll('#svcList .x-svc').forEach(s=>s.addEventListener('click',()=>{
+  document.getElementById('bookTitle').innerHTML=s.querySelector('b').textContent;
+  document.getElementById('bookSub').textContent='Inclui avaliação prévia · '+s.querySelector('small').firstChild.textContent.trim();
+  showScreen(4);
+}));
+document.querySelectorAll('#slots div:not(.off)').forEach(d=>d.addEventListener('click',()=>{
+  document.querySelectorAll('#slots div').forEach(x=>x.classList.toggle('on',x===d));
+  document.getElementById('bookBtn').textContent='Confirmar pedido · '+d.textContent;
+}));
+document.getElementById('bookBtn').addEventListener('click',function(){this.textContent='✓ Pedido enviado';setTimeout(()=>this.textContent='Confirmar pedido · '+document.querySelector('#slots .on').textContent,2200)});
+document.querySelectorAll('.days div').forEach(d=>d.style.cursor='pointer');
+document.querySelectorAll('#showScreen .days div').forEach(d=>d.addEventListener('click',()=>document.querySelectorAll('#showScreen .days div').forEach(x=>x.classList.toggle('on',x===d))));
+
+/* Calculator */
+(function(){
+  const $=id=>document.getElementById(id);
+  const grp=n=>String(Math.round(n)).replace(/\B(?=(\d{3})+(?!\d))/g,'.');const fmt=n=>'€'+grp(n);
+  const ins=['cA','cB','cC','cD'].map($);
+  function upd(){
+    ins.forEach(i=>i.style.setProperty('--p',((i.value-i.min)/(i.max-i.min)*100)+'%'));
+    const a=+$('cA').value,b=+$('cB').value,c=+$('cC').value/100,d=+$('cD').value;
+    $('oA').textContent=grp(a);$('oB').textContent='€'+b;$('oC').textContent=Math.round(c*100)+'%';$('oD').textContent=String(d).replace('.',',');
+    const vis=a*c*d,tot=vis*b;
+    $('cRes').textContent=fmt(tot);$('cVis').textContent=grp(vis);$('cMon').textContent=fmt(tot/12);
+  }
+  ins.forEach(i=>i.addEventListener('input',upd));upd();
+})();
+
+/* Tilt cards */
+if(!reduce && matchMedia('(hover:hover)').matches){
+  document.querySelectorAll('.tilt').forEach(c=>{
+    c.addEventListener('pointermove',e=>{
+      const r=c.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;
+      c.style.transform=`perspective(800px) rotateY(${x*10}deg) rotateX(${-y*10}deg) translateY(-6px)`;
+    });
+    c.addEventListener('pointerleave',()=>c.style.transform='');
+  });
+}
+
+/* Decorative QR */
+const qr=document.getElementById('qr');
+const pat="1111111100000110111011010001101110110100011000001111111";
+for(let i=0;i<49;i++){const b=document.createElement('i');if(Math.random()>.5 && ![0,1,2,6,7,8,13,14,42,43,48,35,41].includes(i))b.className='o';qr.appendChild(b)}
+
+/* Gold particles */
+(function(){
+  const c=document.getElementById('particles');if(!c||reduce)return;
+  const ctx=c.getContext('2d');let w,h,ps=[];
+  const dpr=Math.min(2,devicePixelRatio||1);
+  function size(){w=c.clientWidth;h=c.clientHeight;c.width=w*dpr;c.height=h*dpr;ctx.setTransform(dpr,0,0,dpr,0,0)}
+  size();addEventListener('resize',size);
+  const N=innerWidth<760?28:60;
+  for(let i=0;i<N;i++)ps.push({x:Math.random()*w,y:Math.random()*h,r:Math.random()*1.6+.3,vy:-(Math.random()*.25+.05),vx:(Math.random()-.5)*.12,a:Math.random()*.6+.2,t:Math.random()*6});
+  let run=true;
+  new IntersectionObserver(es=>{run=es[0].isIntersecting;if(run)loop()}).observe(c);
+  function loop(){
+    if(!run)return;
+    ctx.clearRect(0,0,w,h);
+    for(const p of ps){
+      p.x+=p.vx+mx*.2;p.y+=p.vy;p.t+=.02;
+      if(p.y<-5){p.y=h+5;p.x=Math.random()*w}
+      const al=p.a*(.6+.4*Math.sin(p.t));
+      ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,7);
+      ctx.fillStyle=`rgba(232,204,151,${al})`;ctx.shadowColor='rgba(232,204,151,.8)';ctx.shadowBlur=6;ctx.fill();
+    }
+    requestAnimationFrame(loop);
+  }
+  loop();
+})();
+</script>
+</body>
+</html>
